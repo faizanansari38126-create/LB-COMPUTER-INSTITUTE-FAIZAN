@@ -1,0 +1,8 @@
+node_modules/
+.env
+uploads/student-photos/*
+uploads/certificates/*
+uploads/id-cards/*
+!uploads/student-photos/.gitkeep
+!uploads/certificates/.gitkeep
+!uploads/id-cards/.gitkeep

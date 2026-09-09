@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="LB Computer Institute Admin Dashboard"
+    >
+
+    <title>Admin Dashboard | LB Computer Institute</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body class="admin-dashboard-body">
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="admin-sidebar" id="adminSidebar">
+
+    <div class="admin-sidebar-brand">
+
+        <div class="admin-sidebar-logo">
+            LB
+        </div>
+
+        <div>
+
+            <strong>
+                LB COMPUTER
+            </strong>
+
+            <small>
+                ADMIN PANEL
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <nav class="admin-sidebar-nav">
+
+        <p class="admin-nav-title">
+            MAIN MENU
+        </p>
+
+
+        <a
+            href="admin-dashboard.html"
+            class="admin-nav-link active"
+        >
+            <span>📊</span>
+            Dashboard
+        </a>
+
+
+        <a
+            href="add-student.html"
+            class="admin-nav-link"
+        >
+            <span>👨‍🎓</span>
+            Add Student
+        </a>
+
+
+        <a
+            href="manage-students.html"
+            class="admin-nav-link"
+        >
+            <span>👥</span>
+            Students
+        </a>
+
+
+        <p class="admin-nav-title">
+            DOCUMENTS
+        </p>
+
+
+        <a
+            href="upload-certificate.html"
+            class="admin-nav-link"
+        >
+            <span>📜</span>
+            Certificates
+        </a>
+
+
+        <a
+            href="id-card.html"
+            class="admin-nav-link"
+        >
+            <span>🪪</span>
+            ID Cards
+        </a>
+
+
+        <p class="admin-nav-title">
+            MANAGEMENT
+        </p>
+
+
+        <a
+            href="enquiries.html"
+            class="admin-nav-link"
+        >
+            <span>📩</span>
+            Enquiries
+        </a>
+
+
+        <a
+            href="../courses.html"
+            class="admin-nav-link"
+        >
+            <span>📚</span>
+            Courses
+        </a>
+
+
+        <a
+            href="settings.html"
+            class="admin-nav-link"
+        >
+            <span>⚙️</span>
+            Settings
+        </a>
+
+    </nav>
+
+
+    <div class="admin-sidebar-bottom">
+
+        <div class="admin-sidebar-help">
+
+            <span>💡</span>
+
+            <div>
+
+                <strong>
+                    Need Help?
+                </strong>
+
+                <small>
+                    Contact institute support
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="admin-login.html"
+            class="admin-logout"
+        >
+
+            <span>🚪</span>
+
+            Logout
+
+        </a>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN AREA
+===================================================== -->
+
+<div class="admin-dashboard-main">
+
+
+    <!-- HEADER -->
+
+    <header class="admin-dashboard-header">
+
+        <div class="admin-header-left">
+
+            <button
+                type="button"
+                class="admin-menu-button"
+                id="adminMenuButton"
+            >
+                ☰
+            </button>
+
+            <div>
+
+                <p>
+                    Administration
+                </p>
+
+                <h1>
+                    Dashboard
+                </h1>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-header-right">
+
+            <button
+                type="button"
+                class="admin-notification"
+                title="Notifications"
+            >
+                🔔
+
+                <span>
+                    3
+                </span>
+
+            </button>
+
+
+            <div class="admin-profile">
+
+                <div class="admin-profile-avatar">
+                    FA
+                </div>
+
+                <div>
+
+                    <strong>
+                        MD Faizan Ansari
+                    </strong>
+
+                    <small>
+                        Administrator
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         DASHBOARD CONTENT
+    ================================================= -->
+
+    <main class="admin-dashboard-content">
+
+
+        <!-- WELCOME -->
+
+        <section class="admin-welcome">
+
+            <div>
+
+                <span>
+                    WELCOME BACK 👋
+                </span>
+
+                <h2>
+                    Institute Management Center
+                </h2>
+
+                <p>
+                    Manage students, certificates, ID cards
+                    and enquiries from one secure place.
+                </p>
+
+            </div>
+
+
+            <div class="admin-welcome-badge">
+
+                <strong>
+                    ISO 9001:2015
+                </strong>
+
+                <small>
+                    Quality Management
+                </small>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================= -->
+
+        <section class="admin-stats-grid">
+
+
+            <div class="admin-stat-card">
+
+                <div class="admin-stat-icon blue">
+                    👨‍🎓
+                </div>
+
+                <div>
+
+                    <small>
+                        TOTAL STUDENTS
+                    </small>
+
+                    <h3
+                        class="admin-counter"
+                        data-target="0"
+                    >
+                        0
+                    </h3>
+
+                    <p>
+                        Registered students
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="admin-stat-card">
+
+                <div class="admin-stat-icon purple">
+                    📜
+                </div>
+
+                <div>
+
+                    <small>
+                        CERTIFICATES
+                    </small>
+
+                    <h3
+                        class="admin-counter"
+                        data-target="0"
+                    >
+                        0
+                    </h3>
+
+                    <p>
+                        Verification records
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="admin-stat-card">
+
+                <div class="admin-stat-icon green">
+                    🪪
+                </div>
+
+                <div>
+
+                    <small>
+                        ID CARDS
+                    </small>
+
+                    <h3
+                        class="admin-counter"
+                        data-target="0"
+                    >
+                        0
+                    </h3>
+
+                    <p>
+                        Student ID records
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="admin-stat-card">
+
+                <div class="admin-stat-icon orange">
+                    📩
+                </div>
+
+                <div>
+
+                    <small>
+                        ENQUIRIES
+                    </small>
+
+                    <h3
+                        class="admin-counter"
+                        data-target="0"
+                    >
+                        0
+                    </h3>
+
+                    <p>
+                        New enquiries
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             QUICK ACTIONS
+        ================================================= -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-heading">
+
+                <div>
+
+                    <span>
+                        QUICK ACTIONS
+                    </span>
+
+                    <h2>
+                        Manage Institute
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-actions-grid">
+
+
+                <a
+                    href="add-student.html"
+                    class="admin-action-card"
+                >
+
+                    <div class="admin-action-icon">
+                        👨‍🎓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Add Student
+                        </strong>
+
+                        <p>
+                            Create a new student record
+                        </p>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+
+                <a
+                    href="upload-certificate.html"
+                    class="admin-action-card"
+                >
+
+                    <div class="admin-action-icon">
+                        📜
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Upload Certificate
+                        </strong>
+
+                        <p>
+                            Add certificate verification data
+                        </p>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+
+                <a
+                    href="id-card.html"
+                    class="admin-action-card"
+                >
+
+                    <div class="admin-action-icon">
+                        🪪
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Create ID Card
+                        </strong>
+
+                        <p>
+                            Manage student identity cards
+                        </p>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+
+                <a
+                
+                  href="id-card.html"    
+                   class="admin-action-card"
+                >
+
+                    <div class="admin-action-icon">
+                        📩
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            View Enquiries
+                        </strong>
+
+                        <p>
+                            Check student enquiries
+                        </p>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RECENT ACTIVITY
+        ================================================= -->
+
+        <section class="admin-section">
+
+
+            <div class="admin-section-heading">
+
+                <div>
+
+                    <span>
+                        RECENT ACTIVITY
+                    </span>
+
+                    <h2>
+                        Latest Records
+                    </h2>
+
+                </div>
+
+
+                <a
+                    href="manage-students.html"
+                    class="admin-view-all"
+                >
+                    View All →
+                </a>
+
+            </div>
+
+
+            <div class="admin-empty-state">
+
+                <div>
+                    📋
+                </div>
+
+                <h3>
+                    No student records yet
+                </h3>
+
+                <p>
+                    Once students are added through the
+                    admin panel, their latest activity
+                    will appear here.
+                </p>
+
+                <a
+                    href="add-student.html"
+                    class="admin-primary-button"
+                >
+                    + Add First Student
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             ADMIN INFORMATION
+        ================================================= -->
+
+        <section class="admin-info-grid">
+
+
+            <div class="admin-info-card">
+
+                <div class="admin-info-icon">
+                    📞
+                </div>
+
+                <div>
+
+                    <span>
+                        INSTITUTE SUPPORT
+                    </span>
+
+                    <h3>
+                        Need Assistance?
+                    </h3>
+
+                    <p>
+                        Contact the institute management
+                        for administrative support.
+                    </p>
+
+                    <a href="tel:+919368307539">
+                        +91 9368307539
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="admin-info-card">
+
+                <div class="admin-info-icon">
+                    🛡️
+                </div>
+
+                <div>
+
+                    <span>
+                        SECURITY
+                    </span>
+
+                    <h3>
+                        Protected Admin Area
+                    </h3>
+
+                    <p>
+                        This dashboard is intended only
+                        for authorized institute staff.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="admin-dashboard-footer">
+
+        © <span data-year></span>
+        LB Computer Institute
+        • ISO 9001:2015
+        • Administration Portal
+
+    </footer>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     DASHBOARD JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /* YEAR */
+
+        const year =
+            document.querySelector("[data-year]");
+
+        if (year) {
+
+            year.textContent =
+                new Date().getFullYear();
+
+        }
+
+
+
+        /* MOBILE SIDEBAR */
+
+        const menuButton =
+            document.getElementById(
+                "adminMenuButton"
+            );
+
+        const sidebar =
+            document.getElementById(
+                "adminSidebar"
+            );
+
+
+        if (menuButton && sidebar) {
+
+            menuButton.addEventListener(
+                "click",
+                function () {
+
+                    sidebar.classList.toggle(
+                        "active"
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* STAT COUNTERS */
+
+        const counters =
+            document.querySelectorAll(
+                ".admin-counter"
+            );
+
+
+        counters.forEach(
+            function (counter) {
+
+                const target =
+                    Number(
+                        counter.dataset.target
+                    );
+
+
+                if (target === 0) {
+
+                    counter.textContent = "0";
+
+                    return;
+
+                }
+
+
+                let current = 0;
+
+                const increment =
+                    Math.ceil(
+                        target / 50
+                    );
+
+
+                const timer =
+                    setInterval(
+                        function () {
+
+                            current += increment;
+
+
+                            if (
+                                current >= target
+                            ) {
+
+                                current = target;
+
+                                clearInterval(
+                                    timer
+                                );
+
+                            }
+
+
+                            counter.textContent =
+                                current;
+
+                        },
+                        25
+                    );
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

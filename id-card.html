@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Student ID Card Management - LB Computer Institute">
+
+    <title>ID Cards | LB Computer Institute</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+
+<body class="admin-dashboard-body">
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="admin-sidebar" id="adminSidebar">
+
+    <div class="admin-sidebar-brand">
+
+        <div class="admin-sidebar-logo">
+            LB
+        </div>
+
+        <div>
+            <strong>LB COMPUTER</strong>
+            <small>ADMIN PANEL</small>
+        </div>
+
+    </div>
+
+
+    <nav class="admin-sidebar-nav">
+
+        <p class="admin-nav-title">
+            MAIN MENU
+        </p>
+
+        <a href="admin-dashboard.html"
+           class="admin-nav-link">
+
+            <span>📊</span>
+            Dashboard
+
+        </a>
+
+
+        <a href="add-student.html"
+           class="admin-nav-link">
+
+            <span>👨‍🎓</span>
+            Add Student
+
+        </a>
+
+
+        <a href="manage-students.html"
+           class="admin-nav-link">
+
+            <span>👥</span>
+            Students
+
+        </a>
+
+
+        <p class="admin-nav-title">
+            DOCUMENTS
+        </p>
+
+
+        <a href="upload-certificate.html"
+           class="admin-nav-link">
+
+            <span>📜</span>
+            Certificates
+
+        </a>
+
+
+        <a href="id-card.html"
+           class="admin-nav-link active">
+
+            <span>🪪</span>
+            ID Cards
+
+        </a>
+
+
+        <p class="admin-nav-title">
+            MANAGEMENT
+        </p>
+
+
+        <a href="enquiries.html"
+           class="admin-nav-link">
+
+            <span>📩</span>
+            Enquiries
+
+        </a>
+
+
+        <a href="../courses.html"
+           class="admin-nav-link">
+
+            <span>📚</span>
+            Courses
+
+        </a>
+
+
+        <a href="settings.html"
+           class="admin-nav-link">
+
+            <span>⚙️</span>
+            Settings
+
+        </a>
+
+    </nav>
+
+
+    <div class="admin-sidebar-bottom">
+
+        <div class="admin-sidebar-help">
+
+            <span>💡</span>
+
+            <div>
+
+                <strong>
+                    Need Help?
+                </strong>
+
+                <small>
+                    Contact institute support
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <a href="admin-login.html"
+           class="admin-logout">
+
+            <span>🚪</span>
+            Logout
+
+        </a>
+
+    </div>
+
+</aside>
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<div class="admin-dashboard-main">
+
+
+    <!-- HEADER -->
+
+    <header class="admin-dashboard-header">
+
+        <div class="admin-header-left">
+
+            <button type="button"
+                    class="admin-menu-button"
+                    id="adminMenuButton">
+
+                ☰
+
+            </button>
+
+
+            <div>
+
+                <p>
+                    DOCUMENT MANAGEMENT
+                </p>
+
+                <h1>
+                    Student ID Cards
+                </h1>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-header-right">
+
+            <button type="button"
+                    class="admin-notification">
+
+                🔔
+                <span>3</span>
+
+            </button>
+
+
+            <div class="admin-profile">
+
+                <div class="admin-profile-avatar">
+                    FA
+                </div>
+
+                <div>
+
+                    <strong>
+                        MD Faizan Ansari
+                    </strong>
+
+                    <small>
+                        Administrator
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTENT
+    ===================================================== -->
+
+    <main class="admin-dashboard-content">
+
+
+        <!-- INTRO -->
+
+        <section class="student-page-intro">
+
+            <div>
+
+                <span>
+                    ID CARD MANAGEMENT
+                </span>
+
+                <h2>
+                    Create Student ID Card
+                </h2>
+
+                <p>
+                    Create and manage official student
+                    identification records.
+                </p>
+
+            </div>
+
+
+            <a href="admin-dashboard.html"
+               class="student-back-button">
+
+                ← Dashboard
+
+            </a>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FORM
+        ================================================= -->
+
+        <form id="idCardForm"
+              class="student-form"
+              autocomplete="off">
+
+
+            <!-- STUDENT INFORMATION -->
+
+            <section class="student-form-card">
+
+                <div class="student-form-heading">
+
+                    <div class="student-form-heading-icon">
+                        👨‍🎓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            STEP 01
+                        </span>
+
+                        <h3>
+                            Student Information
+                        </h3>
+
+                        <p>
+                            Enter the details that will appear
+                            on the student ID card.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="student-form-grid">
+
+
+                    <div class="student-form-group">
+
+                        <label for="studentName">
+
+                            Student Name
+                            <b>*</b>
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentName"
+                            name="student_name"
+                            placeholder="Enter full name"
+                            required
+                        >
+
+                    </div>
+                    <div class="student-form-group">
+
+                 <label for="idCardNumber">
+
+                   ID Card Number
+                     <b>*</b>
+
+               </label>
+
+                <input
+                 type="text"
+                id="idCardNumber"
+                  name="id_card_number"
+                  placeholder="Example: LB-ID-2026-0001"
+                 readonly
+                  required
+    >
+
+                </div>
+
+                    <div class="student-form-group">
+
+                        <label for="studentId">
+
+                            Student ID
+                            <b>*</b>
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentId"
+                            name="student_id"
+                            placeholder="Example: LB-STU-0001"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="student-form-group">
+
+                        <label for="fatherName">
+
+                            Father's Name
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fatherName"
+                            name="father_name"
+                            placeholder="Enter father's name"
+                        >
+
+                    </div>
+
+
+                    <div class="student-form-group">
+
+                        <label for="studentMobile">
+
+                            Mobile Number
+
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="studentMobile"
+                            name="mobile"
+                            maxlength="10"
+                            inputmode="numeric"
+                            placeholder="10 digit mobile number"
+                        >
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- COURSE DETAILS -->
+
+            <section class="student-form-card">
+
+                <div class="student-form-heading">
+
+                    <div class="student-form-heading-icon">
+                        📚
+                    </div>
+
+                    <div>
+
+                        <span>
+                            STEP 02
+                        </span>
+
+                        <h3>
+                            Course Information
+                        </h3>
+
+                        <p>
+                            Select the student's enrolled course.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="student-form-grid">
+
+
+                    <div class="student-form-group">
+
+                        <label for="course">
+
+                            Course
+                            <b>*</b>
+
+                        </label>
+
+                        <select
+                            id="course"
+                            name="course"
+                            required
+                        >
+
+                            <option value="">
+                                Select Course
+                            </option>
+
+                            <option>
+                                Computer Basics
+                            </option>
+
+                            <option>
+                                Internet Surfing
+                            </option>
+
+                            <option>
+                                MS Office
+                            </option>
+
+                            <option>
+                                Advanced Excel
+                            </option>
+
+                            <option>
+                                Tally
+                            </option>
+
+                            <option>
+                                CorelDRAW
+                            </option>
+
+                            <option>
+                                Photoshop
+                            </option>
+
+                            <option>
+                                Hardware & Networking
+                            </option>
+
+                            <option>
+                                PHP
+                            </option>
+
+                            <option>
+                                DBMS
+                            </option>
+
+                            <option>
+                                Python
+                            </option>
+
+                            <option>
+                                ChatGPT & AI
+                            </option>
+
+                            <option>
+                                AI Prompt Engineering
+                            </option>
+
+                            <option>
+                                Web Development
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="student-form-group">
+
+                        <label for="batch">
+
+                            Batch
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="batch"
+                            name="batch"
+                            placeholder="Example: Morning Batch"
+                        >
+
+                    </div>
+
+
+                    <div class="student-form-group">
+
+                        <label for="joiningDate">
+
+                            Joining Date
+                            <b>*</b>
+
+                        </label>
+
+                        <input
+                            type="date"
+                            id="joiningDate"
+                            name="joining_date"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="student-form-group">
+
+                        <label for="validTill">
+
+                            Valid Till
+
+                        </label>
+
+                        <input
+                            type="date"
+                            id="validTill"
+                            name="valid_till"
+                        >
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- PHOTO -->
+
+            <section class="student-form-card">
+
+                <div class="student-form-heading">
+
+                    <div class="student-form-heading-icon">
+                        📷
+                    </div>
+
+                    <div>
+
+                        <span>
+                            STEP 03
+                        </span>
+
+                        <h3>
+                            Student Photograph
+                        </h3>
+
+                        <p>
+                            Upload a clear student photograph.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="certificate-upload-box">
+
+                    <div class="certificate-upload-icon">
+                        📷
+                    </div>
+
+
+                    <h3>
+                        Upload Student Photo
+                    </h3>
+
+
+                    <p>
+                        Use a clear JPG or PNG photograph
+                        suitable for the ID card.
+                    </p>
+
+
+                    <label
+                        for="studentPhoto"
+                        class="student-upload-button"
+                    >
+
+                        📎 Choose Photo
+
+                    </label>
+
+
+                    <input
+                        type="file"
+                        id="studentPhoto"
+                        name="student_photo"
+                        accept="image/jpeg,image/png"
+                        hidden
+                    >
+
+
+                    <div
+                        id="studentPhotoName"
+                        class="certificate-file-name"
+                    >
+                    </div>
+
+
+                    <small>
+                        Supported: JPG and PNG
+                    </small>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ADDITIONAL DETAILS -->
+
+            <section class="student-form-card">
+
+                <div class="student-form-heading">
+
+                    <div class="student-form-heading-icon">
+                        🏫
+                    </div>
+
+                    <div>
+
+                        <span>
+                            STEP 04
+                        </span>
+
+                        <h3>
+                            Institute Details
+                        </h3>
+
+                        <p>
+                            Information displayed on the ID card.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="student-form-grid">
+
+
+                    <div class="student-form-group">
+
+                        <label for="designation">
+
+                            Card Holder
+
+                        </label>
+
+                        <select
+                            id="designation"
+                            name="designation"
+                        >
+
+                            <option>
+                                Student
+                            </option>
+
+                            <option>
+                                Trainee
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="student-form-group">
+
+                        <label for="emergencyContact">
+
+                            Emergency Contact
+
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="emergencyContact"
+                            name="emergency_contact"
+                            maxlength="10"
+                            inputmode="numeric"
+                            placeholder="Emergency mobile number"
+                        >
+
+                    </div>
+
+
+                    <div class="student-form-group full-width">
+
+                        <label for="address">
+
+                            Student Address
+
+                        </label>
+
+                        <textarea
+                            id="address"
+                            name="address"
+                            rows="3"
+                            placeholder="Enter student address"
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ID CARD PREVIEW -->
+
+            <section class="student-form-card">
+
+                <div class="student-form-heading">
+
+                    <div class="student-form-heading-icon">
+                        👁️
+                    </div>
+
+                    <div>
+
+                        <span>
+                            PREVIEW
+                        </span>
+
+                        <h3>
+                            ID Card Preview
+                        </h3>
+
+                        <p>
+                            Preview will be connected to the
+                            entered student information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="id-card-preview-area">
+
+                    <div class="professional-id-card">
+
+
+                        <div class="id-card-top">
+
+                            <div class="id-card-logo">
+                                LB
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    LB COMPUTER INSTITUTE
+                                </strong>
+
+                                <small>
+                                    ISO 9001:2015
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="id-card-photo"
+                             id="idCardPhotoPreview">
+
+                            PHOTO
+
+                        </div>
+
+
+                        <h3 id="previewStudentName">
+                            Student Name
+                        </h3>
+
+
+                        <p id="previewCourse">
+                            Course Name
+                        </p>
+
+
+                        <div class="id-card-details">
+
+                            <div>
+
+                                <span>
+                                    Student ID
+                                </span>
+
+                                <strong id="previewStudentId">
+                                    LB-STU-0001
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Valid Till
+                                </span>
+
+                                <strong id="previewValidTill">
+                                    --/--/----
+
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="id-card-footer">
+
+                            LB Computer Institute
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- SECURITY -->
+
+            <section class="student-form-card">
+
+                <div class="certificate-security-info">
+
+                    <div>
+                        🔐
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Secure Student Record
+                        </strong>
+
+                        <p>
+                            The final ID card record will be
+                            stored securely after the backend
+                            and database are connected.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- MESSAGE -->
+
+            <div
+                id="idCardFormMessage"
+                class="student-form-message"
+                aria-live="polite">
+            </div>
+
+
+
+            <!-- ACTIONS -->
+
+            <div class="student-form-actions">
+
+                <a
+                    href="admin-dashboard.html"
+                    class="student-cancel-button"
+                >
+                    Cancel
+                </a>
+
+
+                <button
+                    type="reset"
+                    class="student-reset-button"
+                >
+                    Clear
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="student-save-button"
+                >
+                    ✓ Save ID Card
+                </button>
+
+            </div>
+
+        </form>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="admin-dashboard-footer">
+
+        © <span data-year></span>
+        LB Computer Institute
+        • ISO 9001:2015
+        • Administration Portal
+
+    </footer>
+
+</div>
+
+
+
+<!-- =====================================================
+     PAGE JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /* YEAR */
+
+        const year =
+            document.querySelector("[data-year]");
+
+        if (year) {
+
+            year.textContent =
+                new Date().getFullYear();
+
+        }
+
+
+
+        /* MOBILE MENU */
+
+        const menuButton =
+            document.getElementById(
+                "adminMenuButton"
+            );
+
+        const sidebar =
+            document.getElementById(
+                "adminSidebar"
+            );
+
+
+        if (menuButton && sidebar) {
+
+            menuButton.addEventListener(
+                "click",
+                function () {
+
+                    sidebar.classList.toggle(
+                        "active"
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* ELEMENTS */
+
+        const studentName =
+            document.getElementById(
+                "studentName"
+            );
+
+        const studentId =
+            document.getElementById(
+                "studentId"
+            );
+
+        const course =
+            document.getElementById(
+                "course"
+            );
+
+        const validTill =
+            document.getElementById(
+                "validTill"
+            );
+
+        const studentPhoto =
+            document.getElementById(
+                "studentPhoto"
+            );
+
+
+
+        /* =====================================================
+           AUTO-FILL FROM STUDENT RECORD
+           (when opened via "ID Card" button with ?studentId=)
+        ===================================================== */
+
+        const urlParams =
+            new URLSearchParams(window.location.search);
+
+        const linkedStudentId =
+            urlParams.get("studentId") || "";
+
+        if (linkedStudentId) {
+
+            let allStudents = [];
+
+            try {
+                allStudents =
+                    JSON.parse(
+                        localStorage.getItem("lbStudents")
+                    ) || [];
+            } catch (error) {
+                allStudents = [];
+            }
+
+            const matchedStudent =
+                allStudents.find(function (item) {
+                    return item.id === linkedStudentId;
+                });
+
+            if (matchedStudent) {
+
+                if (studentName) {
+                    studentName.value = matchedStudent.name || "";
+                }
+
+                if (studentId) {
+                    studentId.value = matchedStudent.id || "";
+                }
+
+                if (course) {
+                    course.value = matchedStudent.course || "";
+                }
+
+                if (matchedStudent.photo) {
+
+                    const preview =
+                        document.getElementById("idCardPhotoPreview");
+
+                    if (preview) {
+
+                        preview.innerHTML = "";
+
+                        const image =
+                            document.createElement("img");
+
+                        image.src = matchedStudent.photo;
+                        image.alt = "Student photograph";
+
+                        preview.appendChild(image);
+
+                    }
+
+                }
+
+            }
+
+        }
+
+
+
+        /* LIVE PREVIEW */
+
+        function updatePreview() {
+
+            document.getElementById(
+                "previewStudentName"
+            ).textContent =
+                studentName.value.trim()
+                || "Student Name";
+
+
+            document.getElementById(
+                "previewStudentId"
+            ).textContent =
+                studentId.value.trim()
+                || "LB-STU-0001";
+
+
+            document.getElementById(
+                "previewCourse"
+            ).textContent =
+                course.value
+                || "Course Name";
+
+
+            if (validTill.value) {
+
+                const date =
+                    new Date(validTill.value);
+
+                const formatted =
+                    String(date.getDate())
+                        .padStart(2, "0")
+                    + "/" +
+                    String(date.getMonth() + 1)
+                        .padStart(2, "0")
+                    + "/" +
+                    date.getFullYear();
+
+                document.getElementById(
+                    "previewValidTill"
+                ).textContent =
+                    formatted;
+
+            }
+
+        }
+
+
+        studentName.addEventListener(
+            "input",
+            updatePreview
+        );
+
+
+        studentId.addEventListener(
+            "input",
+            updatePreview
+        );
+
+
+        course.addEventListener(
+            "change",
+            updatePreview
+        );
+
+
+        validTill.addEventListener(
+            "change",
+            updatePreview
+        );
+
+
+
+        /* PHOTO PREVIEW */
+
+        studentPhoto.addEventListener(
+            "change",
+            function () {
+
+                const file =
+                    this.files[0];
+
+                if (!file) {
+                    return;
+                }
+
+
+                document.getElementById(
+                    "studentPhotoName"
+                ).textContent =
+                    "Selected: " + file.name;
+
+
+                const reader =
+                    new FileReader();
+
+
+                reader.onload =
+                    function (event) {
+
+                        const preview =
+                            document.getElementById(
+                                "idCardPhotoPreview"
+                            );
+
+                        preview.innerHTML =
+                            "";
+
+                        const image =
+                            document.createElement(
+                                "img"
+                            );
+
+                        image.src =
+                            event.target.result;
+
+                        image.alt =
+                            "Student photograph";
+
+                        preview.appendChild(
+                            image
+                        );
+
+                    };
+
+
+                reader.readAsDataURL(file);
+
+            }
+        );
+
+
+
+        /* Run once on load so autofilled/prefilled
+           values show up in the card preview immediately */
+
+        updatePreview();
+
+
+
+        /* FORM */
+
+        const form =
+            document.getElementById(
+                "idCardForm"
+            );
+
+        const message =
+            document.getElementById(
+                "idCardFormMessage"
+            );
+
+
+        form.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                message.style.display =
+                    "block";
+
+                message.className =
+                    "student-form-message info";
+
+                message.textContent =
+                    "ID card details are ready. Database connection will be added in the backend stage.";
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>

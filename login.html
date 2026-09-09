@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Secure student login portal of LB Computer Institute."
+    >
+
+    <title>Student Login | LB Computer Institute</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="topbar">
+
+    <div class="container topbar-inner">
+
+        <div class="topbar-left">
+
+            <span>
+                🎓 Professional Computer Education
+            </span>
+
+            <span>
+                🏆 ISO 9001:2015
+            </span>
+
+        </div>
+
+
+        <div class="topbar-right">
+
+            <a href="tel:+919368307539">
+                📞 9368307539
+            </a>
+
+            <a href="tel:+919815250155">
+                📞 +91 98152-50155
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="site-header">
+
+    <div class="container nav-wrap">
+
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+
+            <span class="brand-mark">
+                LB
+            </span>
+
+            <span class="brand-text">
+
+                <strong>
+                    LB COMPUTER INSTITUTE
+                </strong>
+
+                <small>
+                    LEARN • GROW • SUCCEED
+                </small>
+
+            </span>
+
+        </a>
+
+
+
+        <button
+            class="menu-toggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+
+
+        <nav id="mainNav">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="courses.html">
+                Courses
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="student-corner.html">
+                Student Corner
+            </a>
+
+            <a href="enquiry.html">
+                Enquiry
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a
+                href="login.html"
+                class="active nav-login"
+            >
+                Login
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     LOGIN PAGE
+===================================================== -->
+
+<main class="login-page">
+
+    <div class="container login-container">
+
+
+        <!-- =================================================
+             LEFT SIDE
+        ================================================== -->
+
+        <div class="login-intro">
+
+
+            <span class="eyebrow">
+                STUDENT PORTAL
+            </span>
+
+
+            <h1>
+                Welcome
+                <span>Back!</span>
+            </h1>
+
+
+            <p>
+                Login to access your LB Computer Institute
+                student account and available student services.
+            </p>
+
+
+
+            <div class="login-features">
+
+
+                <div class="login-feature">
+
+                    <div class="login-feature-icon">
+                        🎓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Student Account
+                        </h3>
+
+                        <p>
+                            Access your personal student
+                            account.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="login-feature">
+
+                    <div class="login-feature-icon">
+                        📚
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Learning Information
+                        </h3>
+
+                        <p>
+                            Access relevant course and
+                            student information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="login-feature">
+
+                    <div class="login-feature-icon">
+                        🔐
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Secure Access
+                        </h3>
+
+                        <p>
+                            Your account should be protected
+                            using secure authentication.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="login-iso">
+
+                <span>
+                    ✓
+                </span>
+
+                ISO 9001:2015
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             LOGIN CARD
+        ================================================== -->
+
+        <div class="login-card">
+
+
+            <div class="login-logo">
+                LB
+            </div>
+
+
+            <span class="eyebrow">
+                ACCOUNT LOGIN
+            </span>
+
+
+            <h2>
+                Student Login
+            </h2>
+
+
+            <p class="login-subtitle">
+                Enter your login details to continue.
+            </p>
+
+
+
+            <!-- =================================================
+                 LOGIN FORM
+            ================================================== -->
+
+            <form
+                id="loginForm"
+                autocomplete="on"
+            >
+
+
+                <!-- USERNAME / EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="loginEmail">
+
+                        Email or Student ID
+
+                        <span>*</span>
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="loginEmail"
+                        name="login_identifier"
+                        placeholder="Enter email or student ID"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="loginPassword">
+
+                        Password
+
+                        <span>*</span>
+
+                    </label>
+
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="passwordToggle"
+                            aria-label="Show password"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- REMEMBER + FORGOT -->
+
+                <div class="login-options">
+
+
+                    <label class="remember-me">
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                            name="remember"
+                        >
+
+                        <span>
+                            Remember me
+                        </span>
+
+                    </label>
+
+
+                    <a href="forgot-password.html">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="btn btn-primary login-submit"
+                >
+                    🔐 Login
+                </button>
+
+
+
+                <!-- LOGIN MESSAGE -->
+
+                <div
+                    id="loginMessage"
+                    class="login-message"
+                    aria-live="polite"
+                ></div>
+
+            </form>
+
+
+
+            <!-- =================================================
+                 SIGN UP
+            ================================================== -->
+
+            <div class="login-divider">
+
+                <span>
+                    OR
+                </span>
+
+            </div>
+
+
+            <div class="signup-prompt">
+
+                <p>
+                    Don't have a student account?
+                </p>
+
+
+                <a
+                    href="signup.html"
+                    class="btn btn-soft"
+                >
+                    Create Student Account
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 STUDENT CORNER
+            ================================================== -->
+
+            <div class="login-help">
+
+                <span>
+                    🎓
+                </span>
+
+                <div>
+
+                    <strong>
+                        Student Services
+                    </strong>
+
+                    <p>
+                        Need certificate or ID verification?
+                    </p>
+
+                    <a href="student-corner.html">
+                        Visit Student Corner →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     QUICK CONTACT
+===================================================== -->
+
+<section class="login-contact-section">
+
+    <div class="container">
+
+
+        <div class="login-contact-box">
+
+
+            <div>
+
+                <span class="eyebrow">
+                    NEED HELP?
+                </span>
+
+
+                <h2>
+                    Can't Login?
+                    <span>We're Here To Help.</span>
+                </h2>
+
+
+                <p>
+                    If you are having trouble with your
+                    student account, contact the institute.
+                </p>
+
+            </div>
+
+
+
+            <div class="login-contact-actions">
+
+                <a
+                    href="tel:+919815250155"
+                    class="btn btn-primary"
+                >
+                    📞 Call Us
+                </a>
+
+
+                <a
+                    href="https://wa.me/919815250155?text=Hello%20LB%20Computer%20Institute%2C%20I%20need%20help%20with%20student%20login."
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-soft"
+                >
+                    💬 WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SECURITY NOTICE
+===================================================== -->
+
+<section class="content-section">
+
+    <div class="container">
+
+
+        <div class="notice-box">
+
+
+            <div class="notice-icon">
+                🔐
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Account Security
+                </h3>
+
+
+                <p>
+                    Never share your password with anyone.
+                    A real login system will authenticate
+                    your credentials through the website's
+                    secure backend rather than storing
+                    passwords directly inside this HTML file.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+
+        <div class="footer-about">
+
+            <a
+                href="index.html"
+                class="brand"
+            >
+
+                <span class="brand-mark">
+                    LB
+                </span>
+
+                <span class="brand-text">
+
+                    <strong>
+                        LB COMPUTER INSTITUTE
+                    </strong>
+
+                    <small>
+                        LEARN • GROW • SUCCEED
+                    </small>
+
+                </span>
+
+            </a>
+
+
+            <p>
+                Practical computer education and
+                digital skill development for students
+                and learners.
+            </p>
+
+
+            <span class="iso-badge">
+                ISO 9001:2015
+            </span>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h4>
+                Quick Links
+            </h4>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="courses.html">
+                Courses
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h4>
+                Student
+            </h4>
+
+            <a href="student-corner.html">
+                Student Corner
+            </a>
+
+            <a href="certificate-verification.html">
+                Certificate Verification
+            </a>
+
+            <a href="id-card-verification.html">
+                ID Card Verification
+            </a>
+
+            <a href="login.html">
+                Student Login
+            </a>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h4>
+                Contact
+            </h4>
+
+            <a href="tel:+919368307539">
+                9368307539
+            </a>
+
+            <a href="tel:+919815250155">
+                +91 98152-50155
+            </a>
+
+            <a href="mailto:faizanansari38126@gmail.com">
+                faizanansari38126@gmail.com
+            </a>
+
+            <a href="enquiry.html">
+                Course Enquiry
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+        <div class="container footer-bottom-inner">
+
+            <p>
+                ©
+                <span data-year></span>
+                LB Computer Institute.
+                All Rights Reserved.
+            </p>
+
+
+            <p>
+                Website Development:
+                <strong>
+                    MD Faizan Ansari
+                </strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     FLOATING WHATSAPP
+===================================================== -->
+
+<a
+    href="https://wa.me/919815250155?text=Hello%20LB%20Computer%20Institute%2C%20I%20need%20help."
+    class="floating-whatsapp"
+    target="_blank"
+    rel="noopener"
+    aria-label="Contact on WhatsApp"
+>
+    💬
+</a>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

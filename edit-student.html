@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Edit Student - LB Computer Institute Admin Panel"
+    >
+
+    <title>Edit Student | LB Computer Institute</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+
+<body class="admin-dashboard-body">
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="admin-sidebar" id="adminSidebar">
+
+    <div class="admin-sidebar-brand">
+
+        <div class="admin-sidebar-logo">
+            LB
+        </div>
+
+        <div>
+            <strong>LB COMPUTER</strong>
+            <small>ADMIN PANEL</small>
+        </div>
+
+    </div>
+
+
+    <nav class="admin-sidebar-nav">
+
+        <p class="admin-nav-title">
+            MAIN MENU
+        </p>
+
+        <a
+            href="admin-dashboard.html"
+            class="admin-nav-link"
+        >
+            <span>📊</span>
+            Dashboard
+        </a>
+
+
+        <a
+            href="add-student.html"
+            class="admin-nav-link"
+        >
+            <span>👨‍🎓</span>
+            Add Student
+        </a>
+
+
+        <a
+            href="manage-students.html"
+            class="admin-nav-link"
+        >
+            <span>👥</span>
+            Students
+        </a>
+
+
+        <p class="admin-nav-title">
+            DOCUMENTS
+        </p>
+
+
+        <a
+            href="upload-certificate.html"
+            class="admin-nav-link"
+        >
+            <span>📜</span>
+            Certificates
+        </a>
+
+
+        <a
+            href="id-card.html"
+            class="admin-nav-link"
+        >
+            <span>🪪</span>
+            ID Cards
+        </a>
+
+
+        <p class="admin-nav-title">
+            MANAGEMENT
+        </p>
+
+
+        <a
+            href="enquiries.html"
+            class="admin-nav-link"
+        >
+            <span>📩</span>
+            Enquiries
+        </a>
+
+
+        <a
+            href="../courses.html"
+            class="admin-nav-link"
+        >
+            <span>📚</span>
+            Courses
+        </a>
+
+
+        <a
+            href="settings.html"
+            class="admin-nav-link"
+        >
+            <span>⚙️</span>
+            Settings
+        </a>
+
+    </nav>
+
+
+    <div class="admin-sidebar-bottom">
+
+        <div class="admin-sidebar-help">
+
+            <span>💡</span>
+
+            <div>
+                <strong>Need Help?</strong>
+
+                <small>
+                    Contact institute support
+                </small>
+            </div>
+
+        </div>
+
+
+        <a
+            href="admin-login.html"
+            class="admin-logout"
+        >
+            <span>🚪</span>
+            Logout
+        </a>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<div class="admin-dashboard-main">
+
+
+    <!-- HEADER -->
+
+    <header class="admin-dashboard-header">
+
+        <div class="admin-header-left">
+
+            <button
+                type="button"
+                class="admin-menu-button"
+                id="adminMenuButton"
+            >
+                ☰
+            </button>
+
+            <div>
+
+                <p>
+                    STUDENT MANAGEMENT
+                </p>
+
+                <h1>
+                    Edit Student
+                </h1>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-header-right">
+
+            <button
+                type="button"
+                class="admin-notification"
+            >
+                🔔
+                <span>3</span>
+            </button>
+
+
+            <div class="admin-profile">
+
+                <div class="admin-profile-avatar">
+                    FA
+                </div>
+
+                <div>
+
+                    <strong>
+                        MD Faizan Ansari
+                    </strong>
+
+                    <small>
+                        Administrator
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         PAGE CONTENT
+    ================================================= -->
+
+    <main class="admin-dashboard-content">
+
+
+        <!-- PAGE INTRO -->
+
+        <section class="student-page-intro">
+
+            <div>
+
+                <span>
+                    EDIT STUDENT RECORD
+                </span>
+
+                <h2>
+                    Update Student Record
+                </h2>
+
+                <p>
+                    Enter the student's information carefully.
+                    These details can later be used for
+                    student records, ID cards and certificates.
+                </p>
+
+            </div>
+
+
+            <a
+                href="manage-students.html"
+                class="student-back-button"
+            >
+                ← Student Records
+            </a>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FORM
+        ================================================= -->
+
+        <form
+            id="editStudentForm"
+            class="student-form"
+            autocomplete="off"
+        >
+
+
+            <!-- =============================================
+                 PERSONAL INFORMATION
+            ============================================== -->
+
+            <section class="student-form-card">
+
+                <div class="student-form-heading">
+
+                    <div class="student-form-heading-icon">
+                        👤
+                    </div>
+
+                    <div>
+
+                        <span>
+                            STEP 01
+                        </span>
+
+                        <h3>
+                            Personal Information
+                        </h3>
+
+                        <p>
+                            Enter the student's basic details.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="student-form-grid">
+
+
+                    <div class="student-form-group">
+
+                        <label for="studentName">
+                            Student Full Name
+                            <b>*</b>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentName"
+                            name="student_name"
+                            placeholder="Enter full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="student-form-group">
+
+                        <label for="fatherName">
+                            Father's Name
+                            <b>*</b>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fatherName"
+                            name="father_name"
+                            placeholder="Enter father's name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="student-form-group">
+
+                        <label for="motherName">
+                            Mother's Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="motherName"
+                            name="mother_name"
+                            placeholder="Enter mother's name"
+                        >
+
+                    </div>
+
+
+                    <div class="student-form-group">
+
+                        <label for="dateOfBirth">
+                            Date of Birth
+                        </label>
+
+                        <input
+                            type="date"
+                            id="dateOfBirth"
+                            name="date_of_birth"
+                        >
+
+                    </div>
+
+
+                    <div class="student-form-group">
+
+                        <label for="studentGender">
+                            Gender
+                        </label>
+
+                        <select
+                            id="studentGender"
+                            name="gender"
+                        >
+
+                            <option value="">
+                                Select Gender
+                            </option>
+
+                            <option value="Male">
+                                Male
+                            </option>
+
+                            <option value="Female">
+                                Female
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="student-form-group">
+
+                        <label for="studentClass">
+                            Class / Qualification
+                            <b>*</b>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentClass"
+                            name="class"
+                            placeholder="Example: 12th / Graduate"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 CONTACT INFORMATION
+            ============================================== -->
+
+            <section class="student-form-card">
+
+                <div class="student-form-heading">
+
+                    <div class="student-form-heading-icon">
+                        📞
+                    </div>
+
+                    <div>
+
+                        <span>
+                            STEP 02
+                        </span>
+
+                        <h3>
+                            Contact Information
+                        </h3>
+
+                        <p>
+                            Enter student's contact details.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="student-form-grid">
+
+
+                    <div class="student-form-group">
+
+                        <label for="studentMobile">
+                            Mobile Number
+                            <b>*</b>
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="studentMobile"
+                            name="mobile"
+                            placeholder="Enter 10 digit mobile number"
+                            maxlength="10"
+                            inputmode="numeric"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="student-form-group">
+
+                        <label for="studentEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="studentEmail"
+                            name="email"
+                            placeholder="student@example.com"
+                        >
+
+                    </div>
+
+
+                    <div class="student-form-group student-full-width">
+
+                        <label for="studentAddress">
+                            Address
+                        </label>
+
+                        <textarea
+                            id="studentAddress"
+                            name="address"
+                            rows="3"
+                            placeholder="Enter student's complete address"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="student-form-group">
+
+                        <label for="studentState">
+                            State
+                        </label>
+
+                        <select
+                            id="studentState"
+                            name="state"
+                        >
+
+                            <option value="">
+                                Select State
+                            </option>
+
+                            <option>
+                                Bihar
+                            </option>
+
+                            <option>
+                                Punjab
+                            </option>
+
+                            <option>
+                                Uttar Pradesh
+                            </option>
+
+                            <option>
+                                Delhi
+                            </option>
+
+                            <option>
+                                Haryana
+                            </option>
+
+                            <option>
+                                Jharkhand
+                            </option>
+
+                            <option>
+                                West Bengal
+                            </option>
+
+                            <option>
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="student-form-group">
+
+                        <label for="studentCity">
+                            City
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentCity"
+                            name="city"
+                            placeholder="Enter city"
+                        >
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 COURSE INFORMATION
+            ============================================== -->
+
+            <section class="student-form-card">
+
+                <div class="student-form-heading">
+
+                    <div class="student-form-heading-icon">
+                        📚
+                    </div>
+
+                    <div>
+
+                        <span>
+                            STEP 03
+                        </span>
+
+                        <h3>
+                            Course Information
+                        </h3>
+
+                        <p>
+                            Select the course enrolled by the student.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="student-form-grid">
+
+
+                    <div class="student-form-group">
+
+                        <label for="studentCourse">
+                            Select Course
+                            <b>*</b>
+                        </label>
+
+                        <select
+                            id="studentCourse"
+                            name="course"
+                            required
+                        >
+
+                            <option value="">
+                                Select Course
+                            </option>
+
+                            <option>
+                                Computer Basics
+                            </option>
+
+                            <option>
+                                Internet Surfing
+                            </option>
+
+                            <option>
+                                MS Office
+                            </option>
+
+                            <option>
+                                Advanced Excel
+                            </option>
+
+                            <option>
+                                Tally
+                            </option>
+
+                            <option>
+                                CorelDRAW
+                            </option>
+
+                            <option>
+                                Photoshop
+                            </option>
+
+                            <option>
+                                Hardware & Networking
+                            </option>
+
+                            <option>
+                                PHP
+                            </option>
+
+                            <option>
+                                DBMS
+                            </option>
+
+                            <option>
+                                Python
+                            </option>
+
+                            <option>
+                                ChatGPT & AI
+                            </option>
+
+                            <option>
+                                AI Prompt Engineering
+                            </option>
+
+                            <option>
+                                Web Development
+                            </option>
+
+                            <option>
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="student-form-group">
+
+                        <label for="courseDuration">
+                            Course Duration
+                        </label>
+
+                        <select
+                            id="courseDuration"
+                            name="course_duration"
+                        >
+
+                            <option value="">
+                                Select Duration
+                            </option>
+
+                            <option>
+                                1 Month
+                            </option>
+
+                            <option>
+                                3 Months
+                            </option>
+
+                            <option>
+                                6 Months
+                            </option>
+
+                            <option>
+                                1 Year
+                            </option>
+
+                            <option>
+                                2 Year
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="student-form-group">
+
+                        <label for="joiningDate">
+                            Joining Date
+                            <b>*</b>
+                        </label>
+
+                        <input
+                            type="date"
+                            id="joiningDate"
+                            name="joining_date"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="student-form-group">
+
+                        <label for="studentStatus">
+                            Student Status
+                        </label>
+
+                        <select
+                            id="studentStatus"
+                            name="status"
+                        >
+
+                            <option value="Active">
+                                Active
+                            </option>
+
+                            <option value="Completed">
+                                Completed
+                            </option>
+
+                            <option value="Inactive">
+                                Inactive
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 PHOTO
+            ============================================== -->
+
+            <section class="student-form-card">
+
+                <div class="student-form-heading">
+
+                    <div class="student-form-heading-icon">
+                        📷
+                    </div>
+
+                    <div>
+
+                        <span>
+                            STEP 04
+                        </span>
+
+                        <h3>
+                            Student Photo
+                        </h3>
+
+                        <p>
+                            Add a photo for the student's profile
+                            and future ID card.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="student-photo-area">
+
+                    <div
+                        class="student-photo-preview"
+                        id="studentPhotoPreview"
+                    >
+                        <span>
+                            👤
+                        </span>
+                    </div>
+
+
+                    <div class="student-photo-upload">
+
+                        <label
+                            for="studentPhoto"
+                            class="student-upload-button"
+                        >
+                            📷 Choose Student Photo
+                        </label>
+
+                        <input
+                            type="file"
+                            id="studentPhoto"
+                            name="student_photo"
+                            accept="image/jpeg,image/png,image/webp"
+                            hidden
+                        >
+
+                        <p>
+                            JPG, PNG or WEBP.
+                            Use a clear passport-size photo.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+<!-- =============================================
+     SYSTEM INFORMATION
+============================================== -->
+
+<section class="student-form-card">
+
+    <div class="student-form-heading">
+
+        <div class="student-form-heading-icon">
+            🆔
+        </div>
+
+        <div>
+
+            <span>
+                STEP 05
+            </span>
+
+            <h3>
+                Student Identification
+            </h3>
+
+            <p>
+                Student ID and ID Card Number are generated
+                automatically.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="student-form-grid">
+
+
+        <!-- STUDENT ID -->
+
+        <div class="student-form-group">
+
+            <label for="studentId">
+                Student ID
+                <b>*</b>
+            </label>
+
+
+            <div class="student-id-input">
+
+                <input
+                    type="text"
+                    id="studentId"
+                    name="student_id"
+                    placeholder="Student ID"
+                    readonly
+                    required
+                >
+
+
+                <button
+                    type="button"
+                    id="generateStudentId"
+                    class="generate-id-button"
+                >
+                    Generate
+                </button>
+
+            </div>
+
+
+            <small class="form-help-text">
+                Example: LB-STU-2026-0001
+            </small>
+
+        </div>
+
+
+
+        <!-- ID CARD NUMBER -->
+
+        <div class="student-form-group">
+
+            <label for="idCardNumber">
+                ID Card Number
+                <b>*</b>
+            </label>
+
+
+            <div class="student-id-input">
+
+                <input
+                    type="text"
+                    id="idCardNumber"
+                    name="id_card_number"
+                    placeholder="Student ID"
+                    readonly
+                    required
+                >
+
+
+                <button
+                    type="button"
+                    id="generateIdCardNumber"
+                    class="generate-id-button"
+                >
+                    Generate
+                </button>
+
+            </div>
+
+
+            <small class="form-help-text">
+                Example: LB-ID-2026-0001
+            </small>
+
+        </div>
+
+
+
+        <!-- CERTIFICATE NUMBER -->
+
+        <div class="student-form-group student-full-width">
+
+            <label for="certificateNumber">
+                Certificate Number
+            </label>
+
+            <input
+                type="text"
+                id="certificateNumber"
+                name="certificate_number"
+                placeholder="Certificate number will be added after course completion"
+            >
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+            
+
+
+
+            <!-- MESSAGE -->
+
+            <div
+                id="studentFormMessage"
+                class="student-form-message"
+                aria-live="polite"
+            ></div>
+
+
+
+            <!-- FORM ACTIONS -->
+
+            <div class="student-form-actions">
+
+                <a
+                    href="manage-students.html"
+                    class="student-cancel-button"
+                >
+                    Cancel
+                </a>
+
+
+                <button
+                    type="reset"
+                    class="student-reset-button"
+                >
+                    Clear Form
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="student-save-button"
+                >
+                    ✓ Update Student
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="admin-dashboard-footer">
+
+        © <span data-year></span>
+        LB Computer Institute
+        • ISO 9001:2015
+        • Administration Portal
+
+    </footer>
+
+</div>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =====================================================
+       YEAR
+    ===================================================== */
+
+    const year = document.querySelector("[data-year]");
+
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const menuButton =
+        document.getElementById("adminMenuButton");
+
+    const sidebar =
+        document.getElementById("adminSidebar");
+
+    if (menuButton && sidebar) {
+
+        menuButton.addEventListener("click", function () {
+
+            sidebar.classList.toggle("active");
+
+        });
+
+    }
+
+
+    /* =====================================================
+       FORM ELEMENTS
+    ===================================================== */
+
+    const form =
+        document.getElementById("addStudentForm");
+
+    const message =
+        document.getElementById("studentFormMessage");
+
+    const studentId =
+        document.getElementById("studentId");
+
+    const generateStudentIdButton =
+        document.getElementById("generateStudentId");
+
+    const idCardNumber =
+        document.getElementById("idCardNumber");
+
+    const generateIdCardButton =
+        document.getElementById("generateIdCardNumber");
+
+
+    /* =====================================================
+       GENERATE STUDENT ID
+    ===================================================== */
+
+    function generateStudentId() {
+
+        const year =
+            new Date().getFullYear();
+
+        const randomNumber =
+            Math.floor(1000 + Math.random() * 9000);
+
+        if (studentId) {
+
+            studentId.value =
+                "LB-STU-" +
+                year +
+                "-" +
+                randomNumber;
+
+        }
+
+    }
+
+
+    /* =====================================================
+       GENERATE ID CARD NUMBER
+    ===================================================== */
+
+    function generateIdCardNumber() {
+
+        const year =
+            new Date().getFullYear();
+
+        const randomNumber =
+            Math.floor(1000 + Math.random() * 9000);
+
+        if (idCardNumber) {
+
+            idCardNumber.value =
+                "LB-ID-" +
+                year +
+                "-" +
+                randomNumber;
+
+        }
+
+    }
+
+
+    /* =====================================================
+       LOAD EXISTING STUDENT (EDIT MODE)
+    ===================================================== */
+
+    const urlParams =
+        new URLSearchParams(window.location.search);
+
+    const editStudentId =
+        urlParams.get("studentId") || "";
+
+    let existingStudents = [];
+
+    try {
+        existingStudents =
+            JSON.parse(
+                localStorage.getItem("lbStudents")
+            ) || [];
+    } catch (error) {
+        existingStudents = [];
+    }
+
+    const currentStudent =
+        existingStudents.find(function (item) {
+            return item.id === editStudentId;
+        });
+
+    function fillField(id, value) {
+        const el = document.getElementById(id);
+        if (el) {
+            el.value = value || "";
+        }
+    }
+
+    if (currentStudent) {
+
+        fillField("studentId", currentStudent.id);
+        fillField("idCardNumber", currentStudent.idCardNumber);
+        fillField("certificateNumber", currentStudent.certificateNumber);
+        fillField("studentName", currentStudent.name);
+        fillField("fatherName", currentStudent.fatherName);
+        fillField("motherName", currentStudent.motherName);
+        fillField("dateOfBirth", currentStudent.dob);
+        fillField("studentGender", currentStudent.gender);
+        fillField("studentClass", currentStudent.studentClass);
+        fillField("studentMobile", currentStudent.mobile);
+        fillField("studentEmail", currentStudent.email);
+        fillField("studentAddress", currentStudent.address);
+        fillField("studentState", currentStudent.state);
+        fillField("studentCity", currentStudent.city);
+        fillField("studentCourse", currentStudent.course);
+        fillField("courseDuration", currentStudent.courseDuration);
+        fillField("joiningDate", currentStudent.joiningDate);
+        fillField("studentStatus", currentStudent.status);
+
+        if (currentStudent.photo) {
+            const previewEl = document.getElementById("studentPhotoPreview");
+            if (previewEl) {
+                previewEl.innerHTML =
+                    '<img src="' + currentStudent.photo + '" alt="Student Photo Preview">';
+            }
+        }
+
+    } else {
+
+        if (message) {
+            message.style.display = "block";
+            message.className = "student-form-message error";
+            message.textContent =
+                "Student record not found. Go back and select a student to edit.";
+        }
+
+    }
+
+
+    /* =====================================================
+       ID FIELDS ARE LOCKED WHILE EDITING
+    ===================================================== */
+
+    if (generateStudentIdButton) {
+        generateStudentIdButton.disabled = true;
+        generateStudentIdButton.style.opacity = "0.5";
+        generateStudentIdButton.style.cursor = "not-allowed";
+    }
+
+    if (generateIdCardButton) {
+        generateIdCardButton.disabled = true;
+        generateIdCardButton.style.opacity = "0.5";
+        generateIdCardButton.style.cursor = "not-allowed";
+    }
+
+
+    /* =====================================================
+       PHOTO PREVIEW
+    ===================================================== */
+
+    const photoInput =
+        document.getElementById("studentPhoto");
+
+    const photoPreview =
+        document.getElementById("studentPhotoPreview");
+
+    if (photoInput && photoPreview) {
+
+        photoInput.addEventListener(
+            "change",
+            function () {
+
+                const file =
+                    this.files[0];
+
+                if (!file) {
+                    return;
+                }
+
+
+                if (!file.type.startsWith("image/")) {
+
+                    alert(
+                        "Please select a valid image file."
+                    );
+
+                    this.value = "";
+
+                    return;
+
+                }
+
+
+                const reader =
+                    new FileReader();
+
+
+                reader.onload =
+                    function (event) {
+
+                        photoPreview.innerHTML = `
+                            <img
+                                src="${event.target.result}"
+                                alt="Student Photo Preview"
+                            >
+                        `;
+
+                    };
+
+
+                reader.readAsDataURL(file);
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       SAVE STUDENT
+       TEMPORARY FRONTEND STORAGE
+    ===================================================== */
+
+    if (form) {
+
+        form.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                /* Browser validation */
+
+                if (!form.checkValidity()) {
+
+                    form.reportValidity();
+
+                    return;
+
+                }
+
+
+                /* Get values */
+
+                const student = {
+
+                    id:
+                        document.getElementById(
+                            "studentId"
+                        )?.value.trim() || "",
+
+
+                    idCardNumber:
+                        document.getElementById(
+                            "idCardNumber"
+                        )?.value.trim() || "",
+
+
+                    certificateNumber:
+                        document.getElementById(
+                            "certificateNumber"
+                        )?.value.trim() || "",
+
+
+                    name:
+                        document.getElementById(
+                            "studentName"
+                        )?.value.trim() || "",
+
+
+                    fatherName:
+                        document.getElementById(
+                            "fatherName"
+                        )?.value.trim() || "",
+
+
+                    motherName:
+                        document.getElementById(
+                            "motherName"
+                        )?.value.trim() || "",
+
+
+                    dob:
+                        document.getElementById(
+                            "dateOfBirth"
+                        )?.value || "",
+
+
+                    gender:
+                        document.getElementById(
+                            "studentGender"
+                        )?.value || "",
+
+
+                    studentClass:
+                        document.getElementById(
+                            "studentClass"
+                        )?.value.trim() || "",
+
+
+                    mobile:
+                        document.getElementById(
+                            "studentMobile"
+                        )?.value.trim() || "",
+
+
+                    email:
+                        document.getElementById(
+                            "studentEmail"
+                        )?.value.trim() || "",
+
+
+                    address:
+                        document.getElementById(
+                            "studentAddress"
+                        )?.value.trim() || "",
+
+
+                    state:
+                        document.getElementById(
+                            "studentState"
+                        )?.value || "",
+
+
+                    city:
+                        document.getElementById(
+                            "studentCity"
+                        )?.value.trim() || "",
+
+
+                    course:
+                        document.getElementById(
+                            "studentCourse"
+                        )?.value || "",
+
+
+                    courseDuration:
+                        document.getElementById(
+                            "courseDuration"
+                        )?.value || "",
+
+
+                    joiningDate:
+                        document.getElementById(
+                            "joiningDate"
+                        )?.value || "",
+
+
+                    status:
+                        document.getElementById(
+                            "studentStatus"
+                        )?.value || "Active",
+
+
+                    photo:
+                        currentStudent ? currentStudent.photo || "" : "",
+
+
+                    createdAt:
+                        currentStudent ? currentStudent.createdAt || new Date().toISOString() : new Date().toISOString(),
+
+
+                    updatedAt:
+                        new Date().toISOString()
+
+                };
+
+
+                /* =================================================
+                   PHOTO
+                ================================================= */
+
+                if (
+                    photoInput &&
+                    photoInput.files &&
+                    photoInput.files[0]
+                ) {
+
+                    const file =
+                        photoInput.files[0];
+
+                    const reader =
+                        new FileReader();
+
+
+                    reader.onload =
+                        function (event) {
+
+                            student.photo =
+                                event.target.result;
+
+                            saveStudent(student);
+
+                        };
+
+
+                    reader.readAsDataURL(file);
+
+                } else {
+
+                    saveStudent(student);
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       SAVE FUNCTION
+    ===================================================== */
+
+    function saveStudent(student) {
+
+        let students = [];
+
+        try {
+
+            students =
+                JSON.parse(
+                    localStorage.getItem(
+                        "lbStudents"
+                    )
+                ) || [];
+
+        } catch (error) {
+
+            students = [];
+
+        }
+
+
+        /* Update the matching record in place */
+
+        const index =
+            students.findIndex(
+                function (item) {
+
+                    return item.id === student.id;
+
+                }
+            );
+
+
+        if (index !== -1) {
+
+            students[index] = student;
+
+        } else {
+
+            students.push(student);
+
+        }
+
+
+        localStorage.setItem(
+            "lbStudents",
+            JSON.stringify(students)
+        );
+
+
+        /* Success message */
+
+        if (message) {
+
+            message.style.display =
+                "block";
+
+            message.className =
+                "student-form-message success";
+
+            message.textContent =
+                "✓ Student record updated successfully.";
+
+        }
+
+
+        /* Redirect after save */
+
+        setTimeout(
+            function () {
+
+                window.location.href =
+                    "manage-students.html";
+
+            },
+            1000
+        );
+
+    }
+
+});
+
+</script>
+</body>
+</html>

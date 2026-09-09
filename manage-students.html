@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Manage Students - LB Computer Institute">
+
+    <title>Manage Students | LB Computer Institute</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+
+<body class="admin-dashboard-body">
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="admin-sidebar" id="adminSidebar">
+
+    <div class="admin-sidebar-brand">
+
+        <div class="admin-sidebar-logo">
+            LB
+        </div>
+
+        <div>
+            <strong>LB COMPUTER</strong>
+            <small>ADMIN PANEL</small>
+        </div>
+
+    </div>
+
+
+    <nav class="admin-sidebar-nav">
+
+        <p class="admin-nav-title">
+            MAIN MENU
+        </p>
+
+
+        <a href="admin-dashboard.html"
+           class="admin-nav-link">
+
+            <span>📊</span>
+            Dashboard
+
+        </a>
+
+
+        <a href="add-student.html"
+           class="admin-nav-link">
+
+            <span>👨‍🎓</span>
+            Add Student
+
+        </a>
+
+
+        <a href="manage-students.html"
+           class="admin-nav-link active">
+
+            <span>👥</span>
+            Students
+
+        </a>
+
+
+        <p class="admin-nav-title">
+            DOCUMENTS
+        </p>
+
+
+        <a href="upload-certificate.html"
+           class="admin-nav-link">
+
+            <span>📜</span>
+            Certificates
+
+        </a>
+
+
+        <a href="id-card.html"
+           class="admin-nav-link">
+
+            <span>🪪</span>
+            ID Cards
+
+        </a>
+
+
+        <p class="admin-nav-title">
+            MANAGEMENT
+        </p>
+
+
+        <a href="enquiries.html"
+           class="admin-nav-link">
+
+            <span>📩</span>
+            Enquiries
+
+        </a>
+
+
+        <a href="../courses.html"
+           class="admin-nav-link">
+
+            <span>📚</span>
+            Courses
+
+        </a>
+
+
+        <a href="settings.html"
+           class="admin-nav-link">
+
+            <span>⚙️</span>
+            Settings
+
+        </a>
+
+    </nav>
+
+
+    <div class="admin-sidebar-bottom">
+
+        <div class="admin-sidebar-help">
+
+            <span>💡</span>
+
+            <div>
+                <strong>Need Help?</strong>
+
+                <small>
+                    Contact institute support
+                </small>
+            </div>
+
+        </div>
+
+
+        <a href="admin-login.html"
+           class="admin-logout">
+
+            <span>🚪</span>
+            Logout
+
+        </a>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN AREA
+===================================================== -->
+
+<div class="admin-dashboard-main">
+
+
+    <!-- HEADER -->
+
+    <header class="admin-dashboard-header">
+
+        <div class="admin-header-left">
+
+            <button
+                type="button"
+                class="admin-menu-button"
+                id="adminMenuButton">
+
+                ☰
+
+            </button>
+
+
+            <div>
+
+                <p>
+                    STUDENT MANAGEMENT
+                </p>
+
+                <h1>
+                    Students
+                </h1>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-header-right">
+
+            <button
+                type="button"
+                class="admin-notification"
+                title="Notifications">
+
+                🔔
+
+                <span>3</span>
+
+            </button>
+
+
+            <div class="admin-profile">
+
+                <div class="admin-profile-avatar">
+                    FA
+                </div>
+
+                <div>
+
+                    <strong>
+                        MD Faizan Ansari
+                    </strong>
+
+                    <small>
+                        Administrator
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         CONTENT
+    ================================================= -->
+
+    <main class="admin-dashboard-content">
+
+
+        <!-- PAGE INTRO -->
+
+        <section class="student-page-intro">
+
+            <div>
+
+                <span>
+                    STUDENT DIRECTORY
+                </span>
+
+                <h2>
+                    Manage Students
+                </h2>
+
+                <p>
+                    View, search and manage student records
+                    from the institute administration panel.
+                </p>
+
+            </div>
+
+
+            <a href="add-student.html"
+               class="student-save-button">
+
+                + Add Student
+
+            </a>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SEARCH / FILTER
+        ================================================= -->
+
+        <section class="student-form-card">
+
+            <div class="student-form-heading">
+
+                <div class="student-form-heading-icon">
+                    🔎
+                </div>
+
+                <div>
+
+                    <span>
+                        SEARCH & FILTER
+                    </span>
+
+                    <h3>
+                        Find Student
+                    </h3>
+
+                    <p>
+                        Search student records by name,
+                        ID or course.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="student-form-grid">
+
+
+                <div class="student-form-group">
+
+                    <label for="studentSearch">
+                        Search Student
+                    </label>
+
+                    <input
+                        type="search"
+                        id="studentSearch"
+                        placeholder="Search by name or Student ID"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+
+                <div class="student-form-group">
+
+                    <label for="courseFilter">
+                        Filter by Course
+                    </label>
+
+                    <select id="courseFilter">
+
+                        <option value="">
+                            All Courses
+                        </option>
+
+                        <option>
+                            Computer Basics
+                        </option>
+
+                        <option>
+                            Internet Surfing
+                        </option>
+
+                        <option>
+                            MS Office
+                        </option>
+
+                        <option>
+                            Advanced Excel
+                        </option>
+
+                        <option>
+                            Tally
+                        </option>
+
+                        <option>
+                            CorelDRAW
+                        </option>
+
+                        <option>
+                            Photoshop
+                        </option>
+
+                        <option>
+                            Hardware & Networking
+                        </option>
+
+                        <option>
+                            PHP
+                        </option>
+
+                        <option>
+                            DBMS
+                        </option>
+
+                        <option>
+                            Python
+                        </option>
+
+                        <option>
+                            ChatGPT & AI
+                        </option>
+
+                        <option>
+                            AI Prompt Engineering
+                        </option>
+
+                        <option>
+                            Web Development
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <select id="statusFilter">
+
+            <option value="">
+                All Students
+              </option>
+
+                <option value="Active">
+                 Active
+     </option>
+
+           <option value="Completed">
+             Completed
+           </option>
+    
+         <option value="Inactive">
+            Inactive
+          </option>
+
+          </select>
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             STUDENT TABLE
+        ================================================= -->
+
+        <section class="student-form-card">
+
+            <div class="student-form-heading">
+
+                <div class="student-form-heading-icon">
+                    👥
+                </div>
+
+                <div>
+
+                    <span>
+                        REGISTERED STUDENTS
+                    </span>
+
+                    <h3>
+                        Student Records
+                    </h3>
+
+                    <p id="studentCountText">
+                        Showing 0 student records
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="student-table-wrapper">
+
+                <table
+                    class="student-table"
+                    id="studentTable">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Student
+                            </th>
+
+                            <th>
+                                Student ID
+                            </th>
+
+                            <th>
+                                Course
+                            </th>
+
+                            <th>
+                                Mobile
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="studentTableBody">
+
+                        <!-- Student records will appear here -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+
+            <!-- EMPTY STATE -->
+
+            <div
+                class="admin-empty-state"
+                id="studentEmptyState">
+
+                <div>
+                    👨‍🎓
+                </div>
+
+                <h3>
+                    No student records yet
+                </h3>
+
+                <p>
+                    Students added through the admin panel
+                    will appear here.
+                </p>
+
+                <a
+                    href="add-student.html"
+                    class="admin-primary-button">
+
+                    + Add First Student
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             INFORMATION
+        ================================================= -->
+
+        <section class="admin-info-grid">
+
+
+            <div class="admin-info-card">
+
+                <div class="admin-info-icon">
+                    🔐
+                </div>
+
+                <div>
+
+                    <span>
+                        DATA SECURITY
+                    </span>
+
+                    <h3>
+                        Protected Records
+                    </h3>
+
+                    <p>
+                        Student records should be stored
+                        through the secure backend database
+                        when the website is connected.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="admin-info-card">
+
+                <div class="admin-info-icon">
+                    📜
+                </div>
+
+                <div>
+
+                    <span>
+                        DOCUMENTS
+                    </span>
+
+                    <h3>
+                        Certificates & ID Cards
+                    </h3>
+
+                    <p>
+                        Student records can later be connected
+                        with certificate and ID card verification.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="admin-dashboard-footer">
+
+        © <span data-year></span>
+        LB Computer Institute
+        • ISO 9001:2015
+        • Administration Portal
+
+    </footer>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =====================================================
+       YEAR
+    ===================================================== */
+
+    const year =
+        document.querySelector("[data-year]");
+
+    if (year) {
+
+        year.textContent =
+            new Date().getFullYear();
+
+    }
+
+
+    /* =====================================================
+       MOBILE SIDEBAR
+    ===================================================== */
+
+    const menuButton =
+        document.getElementById("adminMenuButton");
+
+    const sidebar =
+        document.getElementById("adminSidebar");
+
+
+    if (menuButton && sidebar) {
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                sidebar.classList.toggle("active");
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
+
+    const searchInput =
+        document.getElementById("studentSearch");
+
+    const courseFilter =
+        document.getElementById("courseFilter");
+
+    const statusFilter =
+        document.getElementById("statusFilter");
+
+    const tableBody =
+        document.getElementById("studentTableBody");
+
+    const emptyState =
+        document.getElementById("studentEmptyState");
+
+    const countText =
+        document.getElementById("studentCountText");
+
+
+
+    /* =====================================================
+       STATISTICS
+    ===================================================== */
+
+    const totalStudents =
+        document.getElementById("totalStudents");
+
+    const activeStudents =
+        document.getElementById("activeStudents");
+
+    const completedStudents =
+        document.getElementById("completedStudents");
+
+    const inactiveStudents =
+        document.getElementById("inactiveStudents");
+
+
+
+    /* =====================================================
+       LOAD STUDENTS
+    ===================================================== */
+
+    function getStudents() {
+
+        try {
+
+            return JSON.parse(
+                localStorage.getItem(
+                    "lbStudents"
+                )
+            ) || [];
+
+        } catch (error) {
+
+            console.error(
+                "Unable to read student records.",
+                error
+            );
+
+            return [];
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       UPDATE STATISTICS
+    ===================================================== */
+
+    function updateStatistics(students) {
+
+        const total =
+            students.length;
+
+
+        const active =
+            students.filter(
+                function (student) {
+
+                    return student.status === "Active";
+
+                }
+            ).length;
+
+
+        const completed =
+            students.filter(
+                function (student) {
+
+                    return student.status === "Completed";
+
+                }
+            ).length;
+
+
+        const inactive =
+            students.filter(
+                function (student) {
+
+                    return student.status === "Inactive";
+
+                }
+            ).length;
+
+
+        if (totalStudents) {
+            totalStudents.textContent = total;
+        }
+
+        if (activeStudents) {
+            activeStudents.textContent = active;
+        }
+
+        if (completedStudents) {
+            completedStudents.textContent = completed;
+        }
+
+        if (inactiveStudents) {
+            inactiveStudents.textContent = inactive;
+        }
+
+    }
+
+
+
+    /* =====================================================
+       FORMAT DATE
+    ===================================================== */
+
+    function formatDate(dateValue) {
+
+        if (!dateValue) {
+            return "--";
+        }
+
+
+        const date =
+            new Date(dateValue);
+
+
+        if (Number.isNaN(date.getTime())) {
+            return "--";
+        }
+
+
+        return (
+            String(date.getDate()).padStart(2, "0") +
+            "/" +
+            String(date.getMonth() + 1).padStart(2, "0") +
+            "/" +
+            date.getFullYear()
+        );
+
+    }
+
+
+
+    /* =====================================================
+       RENDER STUDENTS
+    ===================================================== */
+
+    function renderStudents() {
+
+        const students =
+            getStudents();
+
+
+        updateStatistics(students);
+
+
+        const searchValue =
+            searchInput.value
+                .trim()
+                .toLowerCase();
+
+
+        const selectedCourse =
+            courseFilter.value;
+
+
+        const selectedStatus =
+            statusFilter.value;
+
+
+        const filteredStudents =
+            students.filter(
+                function (student) {
+
+
+                    const matchesSearch =
+
+                        !searchValue ||
+
+                        (student.name || "")
+                            .toLowerCase()
+                            .includes(searchValue) ||
+
+                        (student.id || "")
+                            .toLowerCase()
+                            .includes(searchValue) ||
+
+                        (student.mobile || "")
+                            .toLowerCase()
+                            .includes(searchValue) ||
+
+                        (student.course || "")
+                            .toLowerCase()
+                            .includes(searchValue);
+
+
+                    const matchesCourse =
+                        !selectedCourse ||
+                        student.course === selectedCourse;
+
+
+                    const matchesStatus =
+                        !selectedStatus ||
+                        student.status === selectedStatus;
+
+
+                    return (
+                        matchesSearch &&
+                        matchesCourse &&
+                        matchesStatus
+                    );
+
+                }
+            );
+
+
+
+        /* CLEAR TABLE */
+
+        tableBody.innerHTML = "";
+
+
+
+        /* COUNT */
+
+        if (countText) {
+
+            countText.textContent =
+                "Showing " +
+                filteredStudents.length +
+                " student " +
+                (
+                    filteredStudents.length === 1
+                        ? "record"
+                        : "records"
+                );
+
+        }
+
+
+
+        /* EMPTY STATE */
+
+        if (
+            filteredStudents.length === 0
+        ) {
+
+            emptyState.style.display =
+                "block";
+
+            return;
+
+        }
+
+
+        emptyState.style.display =
+            "none";
+
+
+
+        /* =================================================
+           CREATE ROWS
+        ================================================= */
+
+        filteredStudents.forEach(
+            function (student) {
+
+                const row =
+                    document.createElement("tr");
+
+
+                row.innerHTML = `
+
+                    <td>
+                        <strong>
+                            ${escapeHTML(student.name || "Unknown")}
+                        </strong>
+                    </td>
+
+
+                    <td>
+                        ${escapeHTML(student.id || "--")}
+                    </td>
+
+
+                    <td>
+                        ${escapeHTML(student.course || "--")}
+                    </td>
+
+
+                    <td>
+                        ${escapeHTML(student.mobile || "--")}
+                    </td>
+
+
+                    <td>
+
+                        <span class="student-status ${getStatusClass(student.status)}">
+
+                            ${escapeHTML(student.status || "Active")}
+
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        <div class="student-table-actions">
+
+                            <button
+                                type="button"
+                                class="student-view-button"
+                                data-id="${escapeHTML(student.id || "")}">
+
+                                View
+
+                            </button>
+
+
+                            <a
+                                href="edit-student.html?studentId=${encodeURIComponent(student.id)}"
+                                class="student-edit-button">
+
+                                Edit
+
+                            </a>
+
+
+                            <a
+                           
+                         href="id-card.html?studentId=${encodeURIComponent(student.id)}"
+                         class="student-id-button">
+
+                         ID Card
+
+                            
+
+                            </a>
+
+
+                            <button
+                                type="button"
+                                class="student-delete-button"
+                                data-id="${escapeHTML(student.id || "")}">
+
+                                Delete
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                `;
+
+
+                tableBody.appendChild(row);
+
+
+                const viewButton =
+                    row.querySelector(
+                        ".student-view-button"
+                    );
+
+
+                if (viewButton) {
+
+                    viewButton.addEventListener(
+                        "click",
+                        function () {
+
+                            showStudentDetails(
+                                student
+                            );
+
+                        }
+                    );
+
+                }
+
+
+                const deleteButton =
+                    row.querySelector(
+                        ".student-delete-button"
+                    );
+
+
+                if (deleteButton) {
+
+                    deleteButton.addEventListener(
+                        "click",
+                        function () {
+
+                            deleteStudent(
+                                student.id
+                            );
+
+                        }
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       DELETE STUDENT
+    ===================================================== */
+
+    function deleteStudent(studentIdToDelete) {
+
+        const confirmed =
+            window.confirm(
+                "Are you sure you want to delete this student record? This cannot be undone."
+            );
+
+        if (!confirmed) {
+            return;
+        }
+
+        let students = [];
+
+        try {
+
+            students =
+                JSON.parse(
+                    localStorage.getItem("lbStudents")
+                ) || [];
+
+        } catch (error) {
+
+            students = [];
+
+        }
+
+        students =
+            students.filter(function (item) {
+                return item.id !== studentIdToDelete;
+            });
+
+        localStorage.setItem(
+            "lbStudents",
+            JSON.stringify(students)
+        );
+
+        renderStudents();
+
+    }
+
+
+
+    /* =====================================================
+       STATUS CLASS
+    ===================================================== */
+
+    function getStatusClass(status) {
+
+        if (!status) {
+            return "active";
+        }
+
+        return status
+            .toLowerCase()
+            .replace(/\s+/g, "-");
+
+    }
+
+
+
+    /* =====================================================
+       HTML ESCAPE
+    ===================================================== */
+
+    function escapeHTML(value) {
+
+        return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+
+    }
+
+
+
+    /* =====================================================
+       VIEW STUDENT
+    ===================================================== */
+
+    function showStudentDetails(student) {
+
+        alert(
+
+            "STUDENT DETAILS\n\n" +
+
+            "Name: " +
+            (student.name || "--") +
+
+            "\nStudent ID: " +
+            (student.id || "--") +
+
+            "\nID Card: " +
+            (student.idCardNumber || "--") +
+
+            "\nFather's Name: " +
+            (student.fatherName || "--") +
+
+            "\nMobile: " +
+            (student.mobile || "--") +
+
+            "\nCourse: " +
+            (student.course || "--") +
+
+            "\nClass: " +
+            (student.studentClass || "--") +
+
+            "\nStatus: " +
+            (student.status || "--") +
+
+            "\nJoining Date: " +
+            formatDate(student.joiningDate)
+
+        );
+
+    }
+
+
+
+    /* =====================================================
+       SEARCH
+    ===================================================== */
+
+    if (searchInput) {
+
+        searchInput.addEventListener(
+            "input",
+            renderStudents
+        );
+
+    }
+
+
+    if (courseFilter) {
+
+        courseFilter.addEventListener(
+            "change",
+            renderStudents
+        );
+
+    }
+
+
+    if (statusFilter) {
+
+        statusFilter.addEventListener(
+            "change",
+            renderStudents
+        );
+
+    }
+
+
+
+    /* =====================================================
+       INITIAL LOAD
+    ===================================================== */
+
+    renderStudents();
+
+});
+
+</script>
+
+
+</body>
+
+</html>
