@@ -1,0 +1,45 @@
+name: Update Institute Contact Number
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  update-contact-number:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Replace old institute contact number
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          while IFS= read -r -d '' file; do
+            case "$file" in
+              ./.git/*|./.github/workflows/update-contact-number.yml) continue ;;
+            esac
+
+            if grep -Iq . "$file"; then
+              perl -0pi -e 's/\+91\s*98152[- ]?50155/+91 9368307539/g; s/919815250155/919368307539/g; s/9815250155/9368307539/g; s/98152[- ]?50155/9368307539/g' "$file"
+            fi
+          done < <(find . -type f -print0)
+
+      - name: Commit updated contact details
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet; then
+            echo "No contact-number changes required."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Update institute contact number"
+          git push
