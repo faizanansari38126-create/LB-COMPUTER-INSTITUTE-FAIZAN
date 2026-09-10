@@ -1,730 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="LB Computer Institute secure administration portal."
-    >
-
-    <title>Admin Login | LB Computer Institute</title>
-
-    <!-- Main Website CSS -->
-    <link rel="stylesheet" href="../style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LB Computer Institute secure administration portal.">
+  <title>Admin Login | LB Computer Institute</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .admin-login-main{min-height:calc(100vh - 150px);display:flex;align-items:center;justify-content:center;padding:40px 20px}
+    .admin-login-container{width:min(1050px,100%);display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+    .admin-intro,.admin-login-card{background:#fff;border-radius:24px;box-shadow:0 18px 50px rgba(0,0,0,.10);padding:38px}
+    .admin-intro h1{font-size:clamp(32px,4vw,52px);line-height:1.08;margin:18px 0}.admin-intro h1 span{color:#2563eb}
+    .admin-badge{display:inline-block;padding:8px 13px;border-radius:999px;background:#eff6ff;color:#1d4ed8;font-weight:700;font-size:12px}
+    .admin-features{display:grid;gap:12px;margin-top:24px}.admin-feature{display:flex;gap:12px;align-items:flex-start}.admin-feature-icon{font-size:23px}.admin-feature strong{display:block}.admin-feature p{margin:4px 0 0;color:#64748b;font-size:14px}
+    .admin-login-card h2{margin:8px 0}.admin-card-icon{font-size:40px}.admin-card-heading>span{font-size:12px;font-weight:800;color:#2563eb;letter-spacing:.08em}.admin-card-heading p{color:#64748b}
+    .admin-form-group{margin:18px 0}.admin-form-group label{display:block;font-weight:700;margin-bottom:8px}.admin-form-group label b{color:#dc2626}
+    .admin-input-wrapper{display:flex;align-items:center;border:1px solid #cbd5e1;border-radius:14px;overflow:hidden;background:#fff}.admin-input-icon{padding:0 10px}.admin-input-wrapper input{flex:1;border:0;outline:0;padding:14px;font-size:15px}.admin-password-toggle{border:0;background:transparent;padding:10px;cursor:pointer}
+    .admin-login-options{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:13px}.admin-remember{display:flex;gap:7px;align-items:center}.admin-login-options a{color:#2563eb;text-decoration:none}
+    .admin-login-button{width:100%;border:0;border-radius:14px;padding:15px 18px;margin-top:20px;background:#111827;color:#fff;font-weight:800;font-size:15px;cursor:pointer}.admin-login-message{display:none;margin-top:14px;padding:11px 12px;border-radius:10px;font-size:14px}.admin-login-message.error{display:block;background:#fef2f2;color:#b91c1c}.admin-login-message.success{display:block;background:#ecfdf5;color:#047857}.admin-login-message.info{display:block;background:#eff6ff;color:#1d4ed8}
+    .admin-security-note{display:flex;gap:12px;margin-top:22px;padding:14px;border-radius:14px;background:#f8fafc}.admin-security-note p{margin:4px 0 0;color:#64748b;font-size:13px}.admin-back{margin-top:18px;text-align:center}.admin-back a,.admin-home-link{color:#2563eb;text-decoration:none}.admin-footer{text-align:center;padding:20px;color:#64748b;font-size:13px}
+    @media(max-width:850px){.admin-login-container{grid-template-columns:1fr}.admin-intro{display:none}.admin-login-card{padding:28px}.admin-login-main{padding:24px 16px}}
+  </style>
 </head>
-
-
 <body class="admin-login-body">
-
-
-<!-- =====================================================
-     ADMIN HEADER
-===================================================== -->
-
 <header class="admin-header">
-
-    <div class="admin-header-inner">
-
-        <a
-            href="../index.html"
-            class="admin-brand"
-        >
-
-            <span class="admin-logo">
-                LB
-            </span>
-
-            <span class="admin-brand-text">
-
-                <strong>
-                    LB COMPUTER INSTITUTE
-                </strong>
-
-                <small>
-                    ADMINISTRATION PORTAL
-                </small>
-
-            </span>
-
-        </a>
-
-
-        <a
-            href="../index.html"
-            class="admin-home-link"
-        >
-            ← Back to Website
-        </a>
-
-    </div>
-
+  <div class="admin-header-inner" style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;max-width:1100px;margin:auto">
+    <a href="index.html" class="admin-brand" style="text-decoration:none;color:inherit"><strong>LB COMPUTER INSTITUTE</strong></a>
+    <a href="index.html" class="admin-home-link">← Back to Website</a>
+  </div>
 </header>
-
-
-
-<!-- =====================================================
-     MAIN ADMIN LOGIN
-===================================================== -->
-
 <main class="admin-login-main">
-
-
-    <div class="admin-login-container">
-
-
-        <!-- ================================================
-             LEFT INFORMATION
-        ================================================= -->
-
-        <section class="admin-intro">
-
-
-            <div class="admin-badge">
-                🔐 SECURE ADMINISTRATION
-            </div>
-
-
-            <h1>
-                Manage Your
-                <span>Institute</span>
-                With Confidence.
-            </h1>
-
-
-            <p>
-                Access the LB Computer Institute
-                administration portal to manage students,
-                courses, certificates, ID cards and
-                institute records.
-            </p>
-
-
-            <!-- FEATURES -->
-
-            <div class="admin-features">
-
-
-                <div class="admin-feature">
-
-                    <div class="admin-feature-icon">
-                        👨‍🎓
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Student Management
-                        </strong>
-
-                        <p>
-                            Manage student profiles and
-                            course information.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="admin-feature">
-
-                    <div class="admin-feature-icon">
-                        📜
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Certificate Management
-                        </strong>
-
-                        <p>
-                            Add and manage certificate
-                            verification records.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="admin-feature">
-
-                    <div class="admin-feature-icon">
-                        🪪
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            ID Card Management
-                        </strong>
-
-                        <p>
-                            Manage student ID card
-                            information.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="admin-feature">
-
-                    <div class="admin-feature-icon">
-                        📊
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Institute Overview
-                        </strong>
-
-                        <p>
-                            View important institute
-                            information from one place.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="admin-iso">
-
-                <span>✓</span>
-
-                ISO 9001:2015
-
-                <small>
-                    Quality Management
-                </small>
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ================================================
-             LOGIN CARD
-        ================================================= -->
-
-        <section class="admin-login-card">
-
-
-            <!-- TOP ICON -->
-
-            <div class="admin-card-icon">
-                🔑
-            </div>
-
-
-            <div class="admin-card-heading">
-
-                <span>
-                    ADMIN PORTAL
-                </span>
-
-                <h2>
-                    Administrator Login
-                </h2>
-
-                <p>
-                    Sign in to continue to the
-                    administration dashboard.
-                </p>
-
-            </div>
-
-
-
-            <!-- LOGIN FORM -->
-
-            <form
-                id="adminLoginForm"
-                autocomplete="off"
-            >
-
-
-                <!-- ADMIN ID -->
-
-                <div class="admin-form-group">
-
-                    <label for="adminUsername">
-
-                        Admin ID / Username
-
-                        <b>*</b>
-
-                    </label>
-
-
-                    <div class="admin-input-wrapper">
-
-                        <span class="admin-input-icon">
-                            👤
-                        </span>
-
-                        <input
-                            type="text"
-                            id="adminUsername"
-                            name="admin_username"
-                            placeholder="Enter admin ID"
-                            autocomplete="username"
-                            required
-                        >
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- PASSWORD -->
-
-                <div class="admin-form-group">
-
-                    <label for="adminPassword">
-
-                        Password
-
-                        <b>*</b>
-
-                    </label>
-
-
-                    <div class="admin-input-wrapper">
-
-                        <span class="admin-input-icon">
-                            🔒
-                        </span>
-
-
-                        <input
-                            type="password"
-                            id="adminPassword"
-                            name="admin_password"
-                            placeholder="Enter password"
-                            autocomplete="current-password"
-                            required
-                        >
-
-
-                        <button
-                            type="button"
-                            id="adminPasswordToggle"
-                            class="admin-password-toggle"
-                            aria-label="Show password"
-                        >
-                            👁
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- REMEMBER -->
-
-                <div class="admin-login-options">
-
-                    <label class="admin-remember">
-
-                        <input
-                            type="checkbox"
-                            id="adminRemember"
-                        >
-
-                        <span>
-                            Remember this device
-                        </span>
-
-                    </label>
-
-
-                    <a href="#">
-                        Need Help?
-                    </a>
-
-                </div>
-
-
-
-                <!-- MESSAGE -->
-
-                <div
-                    id="adminLoginMessage"
-                    class="admin-login-message"
-                    aria-live="polite"
-                ></div>
-
-
-
-                <!-- LOGIN BUTTON -->
-
-                <button
-                    type="submit"
-                    class="admin-login-button"
-                >
-
-                    <span>
-                        🔐
-                    </span>
-
-                    Sign In To Admin Panel
-
-                    <strong>
-                        →
-                    </strong>
-
-                </button>
-
-
-            </form>
-
-
-
-
-            <!-- SECURITY NOTE -->
-
-            <div class="admin-security-note">
-
-                <div class="admin-security-icon">
-                    🛡️
-                </div>
-
-                <div>
-
-                    <strong>
-                        Protected Administration Area
-                    </strong>
-
-                    <p>
-                        Only authorized institute
-                        administrators should access
-                        this portal.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- BACK TO WEBSITE -->
-
-            <div class="admin-back">
-
-                <a href="../index.html">
-                    ← Return to LB Computer Institute
-                </a>
-
-            </div>
-
-
-        </section>
-
-    </div>
-
-
+  <div class="admin-login-container">
+    <section class="admin-intro">
+      <div class="admin-badge">🔐 SECURE ADMINISTRATION</div>
+      <h1>Manage Your <span>Institute</span> With Confidence.</h1>
+      <p>Access the administration portal to manage students, courses, certificates, ID cards and institute records.</p>
+      <div class="admin-features">
+        <div class="admin-feature"><div class="admin-feature-icon">👨‍🎓</div><div><strong>Student Management</strong><p>Manage student profiles and course information.</p></div></div>
+        <div class="admin-feature"><div class="admin-feature-icon">📜</div><div><strong>Certificate Management</strong><p>Add and manage certificate verification records.</p></div></div>
+        <div class="admin-feature"><div class="admin-feature-icon">🪪</div><div><strong>ID Card Management</strong><p>Manage student ID card information.</p></div></div>
+        <div class="admin-feature"><div class="admin-feature-icon">📊</div><div><strong>Institute Overview</strong><p>View important institute information from one place.</p></div></div>
+      </div>
+    </section>
+    <section class="admin-login-card">
+      <div class="admin-card-icon">🔑</div>
+      <div class="admin-card-heading"><span>ADMIN PORTAL</span><h2>Administrator Login</h2><p>Sign in to continue to the administration dashboard.</p></div>
+      <form id="adminLoginForm" autocomplete="off">
+        <div class="admin-form-group"><label for="adminUsername">Admin ID / Username <b>*</b></label><div class="admin-input-wrapper"><span class="admin-input-icon">👤</span><input id="adminUsername" autocomplete="username" required></div></div>
+        <div class="admin-form-group"><label for="adminPassword">Password <b>*</b></label><div class="admin-input-wrapper"><span class="admin-input-icon">🔒</span><input id="adminPassword" type="password" autocomplete="current-password" required><button type="button" id="adminPasswordToggle" class="admin-password-toggle">👁</button></div></div>
+        <div class="admin-login-options"><label class="admin-remember"><input id="adminRemember" type="checkbox"> Remember this device</label><a href="contact.html">Need Help?</a></div>
+        <div id="adminLoginMessage" class="admin-login-message" aria-live="polite"></div>
+        <button type="submit" class="admin-login-button">🔐 Sign In To Admin Panel →</button>
+      </form>
+      <div class="admin-security-note"><div>🛡️</div><div><strong>Protected Administration Area</strong><p>Only authorized institute administrators should access this portal.</p></div></div>
+      <div class="admin-back"><a href="index.html">← Return to LB Computer Institute</a></div>
+    </section>
+  </div>
 </main>
-
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer class="admin-footer">
-
-    <p>
-
-        © <span data-year></span>
-        LB Computer Institute
-
-        <span>•</span>
-
-        ISO 9001:2015
-
-        <span>•</span>
-
-        Admin Portal
-
-    </p>
-
-</footer>
-
-
-
-<!-- =====================================================
-     ADMIN LOGIN JAVASCRIPT
-===================================================== -->
-
+<footer class="admin-footer">© <span id="year"></span> LB Computer Institute • Admin Portal</footer>
 <script>
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-
-        /* ================================================
-           CURRENT YEAR
-        ================================================= */
-
-        const year =
-            document.querySelector("[data-year]");
-
-        if (year) {
-
-            year.textContent =
-                new Date().getFullYear();
-
-        }
-
-
-
-        /* ================================================
-           PASSWORD SHOW / HIDE
-        ================================================= */
-
-        const password =
-            document.getElementById(
-                "adminPassword"
-            );
-
-        const toggle =
-            document.getElementById(
-                "adminPasswordToggle"
-            );
-
-
-        if (password && toggle) {
-
-            toggle.addEventListener(
-                "click",
-                function () {
-
-                    if (
-                        password.type ===
-                        "password"
-                    ) {
-
-                        password.type =
-                            "text";
-
-                        toggle.textContent =
-                            "🙈";
-
-                        toggle.setAttribute(
-                            "aria-label",
-                            "Hide password"
-                        );
-
-                    } else {
-
-                        password.type =
-                            "password";
-
-                        toggle.textContent =
-                            "👁";
-
-                        toggle.setAttribute(
-                            "aria-label",
-                            "Show password"
-                        );
-
-                    }
-
-                }
-            );
-
-        }
-
-
-
-        /* ================================================
-           ADMIN LOGIN FORM
-        ================================================= */
-
-        const form =
-            document.getElementById(
-                "adminLoginForm"
-            );
-
-        const message =
-            document.getElementById(
-                "adminLoginMessage"
-            );
-
-
-        if (form) {
-
-            form.addEventListener(
-                "submit",
-                async function (event) {
-
-                    event.preventDefault();
-
-
-                    const username =
-                        document
-                            .getElementById(
-                                "adminUsername"
-                            )
-                            .value
-                            .trim();
-
-
-                    const passwordValue =
-                        document
-                            .getElementById(
-                                "adminPassword"
-                            )
-                            .value;
-
-
-                    if (
-                        !username ||
-                        !passwordValue
-                    ) {
-
-                        message.textContent =
-                            "Please enter your Admin ID and password.";
-
-                        message.style.display =
-                            "block";
-
-                        message.className =
-                            "admin-login-message error";
-
-                        return;
-
-                    }
-
-
-                    message.textContent = "Signing in...";
-                    message.style.display = "block";
-                    message.className = "admin-login-message info";
-
-                    const apiBase = (window.LB_API_BASE || (
-                        (location.protocol === "http:" || location.protocol === "https:") && location.port === "5000"
-                            ? location.origin + "/api"
-                            : "http://127.0.0.1:5000/api"
-                    )).replace(/\/$/, "");
-
-                    async function hashLocalPassword(value) {
-                        const bytes = new TextEncoder().encode(value);
-                        const digest = await crypto.subtle.digest("SHA-256", bytes);
-                        return Array.from(new Uint8Array(digest)).map((b) => b.toString(16).padStart(2, "0")).join("");
-                    }
-
-                    async function localLogin() {
-                        const seedUsername = "8872746501";
-                        const seedPasswordHash = "75319755a94352d8648866356e7d8a779a9233a6cba05d65b690e3a86c13d27a";
-                        const stored = JSON.parse(localStorage.getItem("lb_local_admins") || "[]");
-
-                        const admins = stored.length ? stored : [{
-                            id: "local_admin_1",
-                            username: seedUsername,
-                            passwordHash: seedPasswordHash,
-                            name: "Administrator",
-                            email: "",
-                            mobile: ""
-                        }];
-
-                        // Migrate any older demo records that stored a plaintext password.
-                        for (const item of admins) {
-                            if (!item.passwordHash && item.password) {
-                                item.passwordHash = await hashLocalPassword(item.password);
-                                delete item.password;
-                            }
-                        }
-
-                        localStorage.setItem("lb_local_admins", JSON.stringify(admins));
-                        const admin = admins.find((item) => item.username === username);
-                        const suppliedHash = await hashLocalPassword(passwordValue);
-                        if (!admin || admin.passwordHash !== suppliedHash) {
-                            throw new Error("Invalid Admin ID or password.");
-                        }
-
-                        localStorage.setItem("lb_admin_token", "LOCAL_ADMIN:" + admin.username);
-                        localStorage.setItem("lb_admin_user", JSON.stringify({
-                            id: admin.id, username: admin.username, name: admin.name,
-                            email: admin.email || "", mobile: admin.mobile || ""
-                        }));
-                        message.textContent = "Login successful. Opening admin panel...";
-                        message.className = "admin-login-message success";
-                        window.location.href = "admin-dashboard.html";
-                    }
-
-                    try {
-                        const response = await fetch(apiBase + "/auth/login", {
-                            method: "POST",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({ username, password: passwordValue })
-                        });
-
-                        const data = await response.json().catch(() => ({}));
-
-                        if (!response.ok) {
-                            throw new Error(data.message || "Admin login failed.");
-                        }
-
-                        localStorage.setItem("lb_admin_token", data.token || "");
-                        localStorage.setItem("lb_admin_user", JSON.stringify(data.admin || {}));
-
-                        if (document.getElementById("adminRemember").checked) {
-                            localStorage.setItem("lb_admin_remember", "1");
-                        } else {
-                            localStorage.removeItem("lb_admin_remember");
-                        }
-
-                        message.textContent = "Login successful. Opening admin panel...";
-                        message.className = "admin-login-message success";
-                        window.location.href = "admin-dashboard.html";
-
-                    } catch (error) {
-                        const isFetchError = error instanceof TypeError && /fetch/i.test(error.message || "");
-                        if (isFetchError) {
-                            try {
-                                await localLogin();
-                                return;
-                            } catch (localError) {
-                                message.textContent = localError.message || "Unable to sign in.";
-                            }
-                        } else {
-                            message.textContent = error.message || "Unable to connect to the admin server.";
-                        }
-                        message.className = "admin-login-message error";
-                    }
-
-                }
-            );
-
-        }
-
+  document.getElementById('year').textContent=new Date().getFullYear();
+  const password=document.getElementById('adminPassword');
+  document.getElementById('adminPasswordToggle').addEventListener('click',()=>{password.type=password.type==='password'?'text':'password'});
+  async function hashText(value){const data=new TextEncoder().encode(value);const digest=await crypto.subtle.digest('SHA-256',data);return [...new Uint8Array(digest)].map(b=>b.toString(16).padStart(2,'0')).join('')}
+  const form=document.getElementById('adminLoginForm');const msg=document.getElementById('adminLoginMessage');
+  form.addEventListener('submit',async(e)=>{
+    e.preventDefault(); const username=document.getElementById('adminUsername').value.trim(); const pass=password.value;
+    msg.className='admin-login-message info'; msg.textContent='Signing in...';
+    const apiBase=(window.LB_API_BASE||'').replace(/\/$/,'');
+    try{
+      if(!apiBase) throw new Error('LOCAL_FALLBACK');
+      const r=await fetch(apiBase+'/auth/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username,password:pass})});
+      const d=await r.json().catch(()=>({})); if(!r.ok) throw new Error(d.message||'Admin login failed.');
+      localStorage.setItem('lb_admin_token',d.token||''); localStorage.setItem('lb_admin_user',JSON.stringify(d.admin||{})); location.href='admin-dashboard.html';
+    }catch(err){
+      try{
+        const seedUsername='8872746501'; const seedPasswordHash='75319755a94352d8648866356e7d8a779a9233a6cba05d65b690e3a86c13d27a';
+        const admins=JSON.parse(localStorage.getItem('lb_local_admins')||'[]'); const list=admins.length?admins:[{id:'local_admin_1',username:seedUsername,passwordHash:seedPasswordHash,name:'Administrator'}];
+        const user=list.find(x=>x.username===username); const h=await hashText(pass); if(!user||user.passwordHash!==h) throw new Error('Invalid Admin ID or password.');
+        localStorage.setItem('lb_local_admins',JSON.stringify(list)); localStorage.setItem('lb_admin_token','LOCAL_ADMIN:'+user.username); localStorage.setItem('lb_admin_user',JSON.stringify(user));
+        msg.className='admin-login-message success'; msg.textContent='Login successful. Opening admin panel...'; location.href='admin-dashboard.html';
+      }catch(localErr){msg.className='admin-login-message error';msg.textContent=localErr.message||'Unable to sign in.';}
     }
-);
-
+  });
 </script>
-
-
 </body>
-
 </html>
