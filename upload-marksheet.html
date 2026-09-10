@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="LB Computer Institute professional marksheet management">
+<title>Upload Marksheet | LB Computer Institute</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="marksheet.css">
+</head>
+<body>
+<div class="ms-page"><div class="ms-wrap">
+<header class="ms-topbar">
+ <div class="ms-brand"><div class="ms-logo">LB</div><div><h1>Marksheet Management</h1><p>LB Computer Institute • Academic Records</p></div></div>
+ <div class="ms-actions"><a class="ms-btn ms-btn-secondary" href="admin-dashboard.html">← Dashboard</a><button class="ms-btn ms-btn-primary" type="button" onclick="window.print()">🖨 Print</button></div>
+</header>
+
+<form id="marksheetForm">
+<section class="ms-card"><div class="ms-card-head"><h2>Student & Marksheet Details</h2><p>Enter the official details exactly as they should appear on the marksheet.</p></div><div class="ms-card-body">
+<div class="ms-grid">
+ <div class="ms-field"><label>Roll Number <span class="ms-required">*</span></label><input id="rollNumber" required placeholder="e.g. LB2026-001"></div>
+ <div class="ms-field"><label>Student Name <span class="ms-required">*</span></label><input id="studentName" required placeholder="Full name"></div>
+ <div class="ms-field"><label>Father's Name <span class="ms-required">*</span></label><input id="fatherName" required placeholder="Father's name"></div>
+ <div class="ms-field"><label>Course <span class="ms-required">*</span></label><select id="course" required><option value="">Select course</option><option>ADCA</option><option>PDCA</option><option>DCA</option><option>MS Office</option><option>Application</option><option>Graphic Designing</option><option>Adobe Photoshop</option><option>Tally Prime</option><option>Web Designing</option><option>Artificial Intelligence (AI)</option><option>Data Entry</option><option>Computer Fundamentals</option><option>Advanced Excel</option><option>Digital Marketing</option><option>Typing</option><option>Other</option></select></div>
+ <div class="ms-field"><label>Course Duration</label><input id="duration" placeholder="e.g. 12 Months"></div>
+ <div class="ms-field"><label>Batch / Session</label><input id="batch" placeholder="e.g. 2025–2026"></div>
+ <div class="ms-field"><label>Issue Date <span class="ms-required">*</span></label><input id="issueDate" type="date" required></div>
+ <div class="ms-field"><label>Government Registration No.</label><input id="govReg" placeholder="Optional registration number"></div>
+ <div class="ms-field"><label>Grade / Result</label><select id="result"><option value="">Auto calculate</option><option>PASS</option><option>FIRST DIVISION</option><option>SECOND DIVISION</option><option>DISTINCTION</option></select></div>
+ <div class="ms-field full"><label>Center / Institute Details</label><textarea id="centerDetails" placeholder="LB Computer Institute | Address | Contact | Registration / Affiliation details"></textarea></div>
+</div>
+
+<div class="ms-section-title">📚 Subject-wise Marks</div>
+<div style="overflow-x:auto"><table class="ms-table"><thead><tr><th>Subject</th><th>Max Marks</th><th>Obtained Marks</th><th>Grade</th></tr></thead><tbody id="subjectRows"></tbody></table></div>
+<div class="ms-summary"><div class="ms-stat"><span>TOTAL MARKS</span><strong id="totalMarks">0 / 0</strong></div><div class="ms-stat"><span>PERCENTAGE</span><strong id="percentage">0%</strong></div><div class="ms-stat"><span>GRADE</span><strong id="autoGrade">—</strong></div><div class="ms-stat"><span>RESULT</span><strong id="autoResult">—</strong></div></div>
+<div class="ms-actions-row"><button type="reset" class="ms-btn ms-btn-secondary">Reset</button><button type="submit" class="ms-btn ms-btn-primary">✓ Save Marksheet</button></div><div id="message" class="ms-msg"></div>
+</div></section>
+</form>
+
+<section class="ms-card"><div class="ms-card-head"><h2>Saved Marksheets</h2><p>Records saved in this browser are listed below.</p></div><div class="ms-card-body" id="savedMarksheets"><div class="ms-empty">No marksheet records saved yet.</div></div></section>
+<footer class="ms-footer">© <span id="year"></span> LB Computer Institute • Marksheet Management Portal</footer>
+</div></div>
+<script>
+const subjects=['MS Office','Application','Graphic Designing','Adobe Photoshop','Tally Prime','Web Designing','Artificial Intelligence (AI)','Computer Fundamentals','Advanced Excel','Digital Marketing'];
+const tbody=document.getElementById('subjectRows');
+subjects.forEach((s,i)=>{const tr=document.createElement('tr');tr.innerHTML=`<td><input class="sub-name" value="${s}"></td><td><input class="max-mark" type="number" min="0" value="100"></td><td><input class="obt-mark" type="number" min="0" value="0"></td><td class="sub-grade">—</td>`;tbody.appendChild(tr)});
+function grade(p){if(p>=90)return'A+';if(p>=80)return'A';if(p>=70)return'B+';if(p>=60)return'B';if(p>=50)return'C';if(p>=40)return'D';return'F'}
+function calc(){let max=0,obt=0;document.querySelectorAll('#subjectRows tr').forEach(r=>{const m=Number(r.querySelector('.max-mark').value)||0,o=Math.min(Number(r.querySelector('.obt-mark').value)||0,m);max+=m;obt+=o;r.querySelector('.sub-grade').textContent=m?grade(o/m*100):'—'});const p=max?obt/max*100:0;document.getElementById('totalMarks').textContent=`${obt} / ${max}`;document.getElementById('percentage').textContent=p.toFixed(2)+'%';document.getElementById('autoGrade').textContent=max?grade(p):'—';document.getElementById('autoResult').textContent=max?(p>=40?'PASS':'FAIL'):'—';return{max,obt,p}}
+tbody.addEventListener('input',calc);calc();
+document.getElementById('issueDate').value=new Date().toISOString().slice(0,10);document.getElementById('year').textContent=new Date().getFullYear();
+function getRecords(){try{return JSON.parse(localStorage.getItem('lbMarksheets')||'[]')}catch{return[]}}
+function render(){const box=document.getElementById('savedMarksheets'),records=getRecords();if(!records.length){box.innerHTML='<div class="ms-empty">No marksheet records saved yet.</div>';return}box.innerHTML=records.slice().reverse().map((r,i)=>`<div class="ms-record"><div class="ms-record-top"><div><h3>${esc(r.studentName)}</h3><p>Roll No: ${esc(r.rollNumber)} • ${esc(r.course)}</p></div><span class="ms-badge">${esc(r.result)}</span></div><div class="ms-record-grid"><div><span>Father</span><strong>${esc(r.fatherName)}</strong></div><div><span>Marks</span><strong>${r.obtained} / ${r.maximum}</strong></div><div><span>Percentage</span><strong>${Number(r.percentage).toFixed(2)}%</strong></div><div><span>Issue Date</span><strong>${esc(r.issueDate)}</strong></div></div><div class="ms-actions-row"><button type="button" class="ms-btn ms-btn-secondary" onclick="removeRecord(${records.length-1-i})">Delete</button></div></div>`).join('')}
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
+function removeRecord(i){const r=getRecords();if(confirm('Delete this marksheet record?')){r.splice(i,1);localStorage.setItem('lbMarksheets',JSON.stringify(r));render()}}
+document.getElementById('marksheetForm').addEventListener('submit',e=>{e.preventDefault();const c=calc(),roll=document.getElementById('rollNumber').value.trim(),records=getRecords();if(records.some(r=>r.rollNumber.toLowerCase()===roll.toLowerCase()))return show('This roll number already exists. Use a unique roll number.','error');const subjectsData=[...document.querySelectorAll('#subjectRows tr')].map(r=>({subject:r.querySelector('.sub-name').value.trim(),max:Number(r.querySelector('.max-mark').value)||0,obt:Number(r.querySelector('.obt-mark').value)||0,grade:r.querySelector('.sub-grade').textContent}));const record={id:Date.now().toString(),rollNumber:roll,studentName:document.getElementById('studentName').value.trim(),fatherName:document.getElementById('fatherName').value.trim(),course:document.getElementById('course').value,duration:document.getElementById('duration').value.trim(),batch:document.getElementById('batch').value.trim(),issueDate:document.getElementById('issueDate').value,govReg:document.getElementById('govReg').value.trim(),centerDetails:document.getElementById('centerDetails').value.trim(),maximum:c.max,obtained:c.obt,percentage:c.p,result:c.p>=40?'PASS':'FAIL',grade:grade(c.p),subjects:subjectsData,createdAt:new Date().toISOString()};records.push(record);localStorage.setItem('lbMarksheets',JSON.stringify(records));show('Marksheet saved successfully.','success');render();e.target.reset();document.getElementById('issueDate').value=new Date().toISOString().slice(0,10);calc();window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})});
+function show(t,type){const m=document.getElementById('message');m.textContent=t;m.className='ms-msg show '+type;setTimeout(()=>m.className='ms-msg',4000)}
+render();
+</script>
+</body></html>
