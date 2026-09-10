@@ -1017,7 +1017,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         );
 
                     const whatsappNumber =
-                        "919815250155";
+                        "919368307539";
 
                     const whatsappURL =
                         "https://wa.me/" +
